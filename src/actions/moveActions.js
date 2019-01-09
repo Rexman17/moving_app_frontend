@@ -1,26 +1,12 @@
-import MoveAdapter from '../apis/MoveAdapter'
-// export const getMoves = () => {
-//   return {
-//     type: 'GET_MOVES',
-//     payload:
-//   }
-// }
+// const movesIndex = `http://localhost:3000/api/v1/moves/`
 
-// Just trying to fetch Moves!
 export function fetchMovesAction() {
   return(dispatch) => {
-    dispatch({ type: 'FETCHING_ANIMAL' })
-    MoveAdapter.getMoves()
-    .then(moves =>  {
-      dispatch(getMovesAction(moves))
-      dispatch({ type: 'FETCHING_ANIMAL' })
+    fetch(`http://localhost:3000/api/v1/moves/`)
+      .then(r => r.json())
+      .then(moves => {
+        // debugger
+        return dispatch({type: 'GET_MOVES', payload: moves })
     })
-  }
-}
-
-export function getMovesAction(moves) {
-  return {
-    type: 'GET_MOVES',
-    payload: moves
   }
 }

@@ -1,35 +1,31 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { getMoves } from '../actions/moveActions'
+import { fetchMovesAction } from '../actions/moveActions'
 
-const movesIndex = `http://localhost:3000/api/v1/moves/`
 class MoveContainer extends React.Component {
 
-  // state = {
-  //   moves: []
-  // }
-  //
   componentDidMount() {
-    fetch(movesIndex)
-    .then(response => response.json())
-    .then(moves => {
-      // In React, we'd do this.setState but with redux we can only update state via a reducer
-      // If we want to interact w redux state, we must DISPATCH an ACTION
-      console.log("Fetched Moves:", moves);
-    })
-
+    this.props.fetchMovesAction()
   }
 
   render() {
-    console.log("MoveContainer props:", this.props.getMoves);
+    // const mappedMoves = this.props.moves.map((move) => {
+    //   console.log(move);
+    //   return <li>{move[0].name}</li>
+    // })
+    console.log("MoveContainer props:", this.props);
     return (
-      <div>MoveContainer</div>
+      <div>
+          <h1 className="card-panel teal lighten-2">Your Moves</h1>
+
+      </div>
     )
   }
 }
 
 // Retrieve the data from within the Redux Store:
-const mapStateToProps = (state) => {
+const mapStateToProps = (state) => { // state is coming nested???????
+  console.log("state", state);
   return {
     moves: state.moves
   }
@@ -37,7 +33,7 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    getMoves: () => { dispatch({ type: 'GET_MOVES'})}
+    fetchMovesAction: () => dispatch(fetchMovesAction())
   }
 }
 
