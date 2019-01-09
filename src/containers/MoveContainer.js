@@ -1,11 +1,11 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { fetchMovesAction } from '../actions/moveActions'
+import { getMoves } from '../actions/moveActions'
 
 class MoveContainer extends React.Component {
 
   componentDidMount() {
-    this.props.fetchMovesAction()
+    this.props.getMoves()
   }
 
   render() {
@@ -24,7 +24,7 @@ class MoveContainer extends React.Component {
 }
 
 // Retrieve the data from within the Redux Store:
-const mapStateToProps = (state) => { // state is coming nested???????
+const mapStateToProps = (state) => {
   console.log("state", state);
   return {
     moves: state.moves
@@ -33,7 +33,7 @@ const mapStateToProps = (state) => { // state is coming nested???????
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    fetchMovesAction: () => dispatch(fetchMovesAction())
+    getMoves: () => dispatch(getMoves())
   }
 }
 

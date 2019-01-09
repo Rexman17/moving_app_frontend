@@ -1,6 +1,6 @@
 // const movesIndex = `http://localhost:3000/api/v1/moves/`
 
-export function fetchMovesAction() {
+export function getMoves() {
   return(dispatch) => {
     fetch(`http://localhost:3000/api/v1/moves/`)
       .then(r => r.json())

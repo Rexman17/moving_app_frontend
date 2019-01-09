@@ -1,23 +1,10 @@
 // Must create initial state to have as a default value because there is no state in the store the first time the app runs:
+import { combineReducers } from 'redux';
+import movesReducer from './movesReducer'
 
-const initialState = {
-  moves: []
-}
+const rootReducer = combineReducers({ moves: movesReducer })
 
-const rootReducer = (state = initialState, action) => {
-
-  switch (action.type) {
-    case "GET_MOVES":
-
-        return {...state, moves: [...state.moves, ...action.payload]}
-
-    default:
-      return state
-  }
-
-
-}
-
+// making key value pairs for a global store
 
 
 export default rootReducer;
