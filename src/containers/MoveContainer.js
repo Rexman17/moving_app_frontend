@@ -2,7 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { getMoves } from '../actions/moveActions'
 
-const allMoves = `http://localhost:3000/api/v1/moves/`
+const movesIndex = `http://localhost:3000/api/v1/moves/`
 class MoveContainer extends React.Component {
 
   // state = {
@@ -10,17 +10,18 @@ class MoveContainer extends React.Component {
   // }
   //
   componentDidMount() {
-    fetch(allMoves)
+    fetch(movesIndex)
     .then(response => response.json())
     .then(moves => {
       // In React, we'd do this.setState but with redux we can only update state via a reducer
       // If we want to interact w redux state, we must DISPATCH an ACTION
       console.log("Fetched Moves:", moves);
     })
+
   }
 
   render() {
-    console.log("MoveContainer props:", this.props);
+    console.log("MoveContainer props:", this.props.getMoves);
     return (
       <div>MoveContainer</div>
     )
