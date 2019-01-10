@@ -8,17 +8,21 @@ class NewMoveForm extends React.Component {
     moveDate: null
   }
 
+  handleChange = event => {
+    console.log("triggered handle change");
+  }
+
   render() {
     return (
       <Fragment>
         <div className="row">
           <div className="input-field col s6">
-            <input placeholder="Move Name" id="move_name" type="text" autocomplete="off"/>
-          <label for="move_name">Name Your Move</label>
+            <input onChange={this.handleChange} placeholder="Move Name" id="move_name" type="text" autoComplete="off"/>
+          <label htmlFor="move_name">Name Your Move</label>
         </div>
           <div className="input-field col s6">
-            <input id="move_date" type="date" autocomplete="off"/>
-            <label for="move_date">Moving On...</label>
+            <input onChange={this.handleChange} id="move_date" type="date" autoComplete="off"/>
+            <label htmlFor="move_date">Moving On...</label>
           </div>
         </div>
       </Fragment>

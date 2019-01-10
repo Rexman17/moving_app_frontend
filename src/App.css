@@ -2,6 +2,22 @@
   font-family: 'Karla', sans-serif;
 }
 
+.move-card {
+  background-image: url("/images/move_card_bg_img.jpg");
+  background-size: auto 100%;
+  background-repeat: no-repeat;
+  opacity: 1;
+}
+
+.card-title {
+  padding-top: 90px;
+}
+
+.see-boxes-link {
+  color: #ec407a;
+  font-family: 'Karla', sans-serif;
+}
+
 .App {
   text-align: center;
 }
