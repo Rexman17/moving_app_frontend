@@ -23,17 +23,3 @@ class Move extends React.Component {
 }
 
 export default Move;
-
-// <div className="col s12 m4">
-// <div className="card small">
-// <div>
-// <div className="card-content">
-// <h5>{this.props.move.name}</h5>
-// <p>{this.props.move.date}</p>
-// </div>
-// <div className="card-action">
-// <a href="#">See Boxes</a>
-// </div>
-// </div>
-// </div>
-// </div>

@@ -12,6 +12,7 @@ class MoveList extends React.Component {
   render() {
     // console.log("MoveList PROPS FROM REDUX STORE", this.props.moves); <= returns array of move objects that we'll map over to create the list
     const mappedMoves = this.props.moves.map((move) => {
+      // debugger
       return <Move move={move} key={move.id} />
     })
 
