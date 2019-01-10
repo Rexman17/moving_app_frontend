@@ -1,17 +1,32 @@
 import React from 'react';
 import { connect } from 'react-redux';
-// connect this one to redux and make class component!!!!!
-const MoveList = props => {
-console.log(props);
+import { getMoves } from '../actions/moveActions'
+import Move from './Move'
 
-  return (
-    <div>MOVE LIST</div>
-  )
-}
+class MoveList extends React.Component {
 
+  componentDidMount() {
+    this.props.getMoves()
+  }
 
+  render() {
+    // console.log("MoveList PROPS FROM REDUX STORE", this.props.moves); <= returns array of move objects that we'll map over to create the list
+    const mappedMoves = this.props.moves.map((move) => {
+      return <Move move={move} key={move.id} />
+    })
+
+    return (
+      <div className="row">
+          {mappedMoves}
+      </div>
+    )
+  }
+}  // END CLASS
+
+// CONNECT TO REDUX STORE:
+// Retrieve the data from within the Redux Store:
 const mapStateToProps = (state) => {
-  console.log("state inside MoveList", state);
+  console.log("state", state);
   return {
     moves: state.moves
   }
@@ -23,4 +38,7 @@ const mapDispatchToProps = (dispatch) => {
   }
 }
 
-export default MoveList;
+// the connect is an HOC which is listening to the redux for when the mapStateToProps changes, i.e., when moves gets updated
+// whenever the moves reducer gets updated
+
+export default connect(mapStateToProps, mapDispatchToProps)(MoveList);
