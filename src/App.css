@@ -4,13 +4,22 @@
 
 .move-card {
   background-image: url("/images/move_card_bg_img.jpg");
-  background-size: auto 100%;
+  background-size: 100%;
   background-repeat: no-repeat;
   opacity: 1;
 }
 
 .card-title {
   padding-top: 90px;
+}
+
+.submit-btn {
+  padding-top: 27px;
+}
+
+.new-move-form {
+  display: block;
+  padding-left: 260px;
 }
 
 .see-boxes-link {
