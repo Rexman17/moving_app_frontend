@@ -10,6 +10,8 @@ const movesReducer = (state = initialState, action) => {
     case "ADD_MOVE":
       return [...state, action.payload]
 
+    case "DELETE_MOVE":
+      return state.filter((move) => move.id !== action.payload)
 
     default:
       return state

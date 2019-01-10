@@ -13,7 +13,7 @@ export function getMoves(id) {
 }
 
 
-// POST TO MOVES
+// POST TO MOVES aka Create a Move
 export function addMove(name, date, userId) {
   // debugger
   return(dispatch) => {
@@ -29,6 +29,20 @@ export function addMove(name, date, userId) {
       .then(newMove => {
         // debugger
         return dispatch({type: 'ADD_MOVE', payload: newMove})
+      })
+  }
+}
+
+// Delete a Move
+// ENDPOINT: http://localhost:3000/api/v1/users/1/moves/1
+export function deleteMove(userId, moveId) {
+  return(dispatch) => {
+    fetch(`http://localhost:3000/api/v1/users/${userId}/moves/${moveId}`, {
+      method: 'DELETE'
+    })
+      .then(r => r.json())
+      .then(deletedMove => {
+        return dispatch({type: 'DELETE_MOVE', payload: deletedMove.id})
       })
   }
 }

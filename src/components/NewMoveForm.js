@@ -46,16 +46,16 @@ class NewMoveForm extends React.Component {
 }
 
 
-function mapDispatchToProps(dispatch) {
-  return {
-    addMove: (name, date, userId) => dispatch(addMove(name, date, userId))
-  }
-}
-
 function mapStateToProps(state) {
   console.log("state in NewMoveForm", state);
   return {
     userId: state.user.user_id
+  }
+}
+
+function mapDispatchToProps(dispatch) {
+  return {
+    addMove: (name, date, userId) => dispatch(addMove(name, date, userId))
   }
 }
 

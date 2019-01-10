@@ -13,6 +13,12 @@
   padding-top: 90px;
 }
 
+.delete-move-btn {
+  position: absolute;
+  bottom: 0px;
+  right: 0px;
+}
+
 /* .submit-btn {
   padding-top: 27px;
   padding-left: 100px;
