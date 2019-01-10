@@ -7,8 +7,7 @@ class NewMoveForm extends React.Component {
   // Local react state for form since we are not passing any data down from this
   state = {
     moveName: '',
-    moveDate: '',
-    currentUserid: 1
+    moveDate: ''
   }
 
   handleChange = (event) => {
@@ -46,10 +45,10 @@ class NewMoveForm extends React.Component {
   }
 }
 
-// only going to need to map dispatch to props
+
 function mapDispatchToProps(dispatch) {
   return {
-    addMove: (name, date) => dispatch(addMove(name, date))
+    addMove: (name, date, userId) => dispatch(addMove(name, date, userId))
   }
 }
 

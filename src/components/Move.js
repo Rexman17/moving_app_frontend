@@ -5,7 +5,7 @@ class Move extends React.Component {
 
 // // TODO: reformat date!
   render() {
-    // console.log("move props", this.props); name date
+    // console.log("move props", this.props)
     return (
       <div className="col s12 m6">
       <div className="card small move-card">

@@ -1,9 +1,9 @@
 // const movesIndex = `http://localhost:3000/api/v1/moves/`
 
 // GET MOVES
-export function getMoves() {
+export function getMoves(id) {
   return(dispatch) => {
-    fetch(`http://localhost:3000/api/v1/users/1/moves`)
+    fetch(`http://localhost:3000/api/v1/users/${id}/moves`)
       .then(r => r.json())
       .then(moves => {
         // debugger
@@ -14,7 +14,7 @@ export function getMoves() {
 
 
 // POST TO MOVES
-export function addMove(name, date, id) {
+export function addMove(name, date, userId) {
   // debugger
   return(dispatch) => {
     fetch(`http://localhost:3000/api/v1/users/1/moves`, {
