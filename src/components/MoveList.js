@@ -7,11 +7,11 @@ class MoveList extends React.Component {
 
   componentDidMount() {
     // once i create userReducer, u will pass userId into the fn below:
-    this.props.getMoves(this.props.users.user_id)
+    this.props.getMoves(this.props.user.user_id)
   }
 
   render() {
-    // console.log(this.props.users.user_id);
+    // console.log(this.props);
     const mappedMoves = this.props.moves.map((move) => {
       // debugger
       return <Move move={move} key={move.id} />
@@ -28,10 +28,10 @@ class MoveList extends React.Component {
 // CONNECT TO REDUX STORE:
 // Retrieve the data from within the Redux Store:
 const mapStateToProps = (state) => {
-  // console.log("props in movelist", state);
+  console.log("props in movelist", state);
   return {
     moves: state.moves,
-    users: state.users
+    user: state.user
   }
 }
 
