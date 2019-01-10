@@ -6,7 +6,7 @@ const MoveContainer = props => {
 
     return (
       <div className="container">
-        <h1 className="card-panel teal lighten-2">My Moves</h1>
+        <h2 className="card-panel cyan darken-3-text white-text" style={{fontFamily: 'Oswald'}}>My Moves</h2>
           <MoveList />
       </div>
     )
