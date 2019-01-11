@@ -13,4 +13,4 @@ const MoveContainer = props => {
     )
 }
 
-export default MoveContainer
+export default MoveContainer;
