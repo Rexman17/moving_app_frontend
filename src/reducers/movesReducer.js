@@ -14,8 +14,10 @@ const movesReducer = (state = initialState, action) => {
       return state.filter((move) => move.id !== action.payload)
 
     case "EDIT_MOVE":
+      // debugger
       return state.map((move) => {
-        if (move === action.payload) {
+      
+        if (move.id === action.payload.id) {
           // debugger
           return action.payload
         } else {

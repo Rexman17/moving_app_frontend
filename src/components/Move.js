@@ -12,7 +12,12 @@ class Move extends React.Component {
   }
 
   static getDerivedStateFromProps(props, state) {
-    
+    if (props.move.name !== state.name || props.move.date !== state.date) {
+      return ({
+        name: props.move.name,
+        date: props.move.date
+      })
+    }
   }
 
   handleClickToEdit = () => {
