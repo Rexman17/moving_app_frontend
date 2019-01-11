@@ -2,14 +2,18 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { deleteMove, selectMove, prefillForm } from '../actions/moveActions'
 // import BoxContainer from '../containers/BoxContainer'
-import { NavLink } from 'react-router-dom'
+import { withRouter } from 'react-router-dom'
 
 class Move extends React.Component {
+  constructor(props) {
+    super(props)
 
-  state = {
-    name: this.props.move.name,
-    date: this.props.move.date
+    this.state = {
+      name: this.props.move.name,
+      date: this.props.move.date
+    }
   }
+
 
   static getDerivedStateFromProps(props, state) {
     if (props.move.name !== state.name || props.move.date !== state.date) {
@@ -47,7 +51,7 @@ class Move extends React.Component {
 
   render() {
     // debugger
-    console.log("move props", this.props)
+    // console.log("move props", this.props.history)
     return (
       <div className="col s12 m4">
       <div className="card small move-card">
@@ -59,10 +63,8 @@ class Move extends React.Component {
           {this.reformatDate(this.state.date)}
         </div>
         <div className="see-boxes-btn">
-            <button className="see-boxes-btn-text waves-effect cyan lighten-2 btn-small">
-              <NavLink to="/boxes" style={{ color: 'white' }}>
-                See Boxes
-              </NavLink>
+            <button onClick={() => this.props.history.push('/boxes')} className="see-boxes-btn-text waves-effect cyan lighten-2 btn-small">
+              See Boxes
             </button>
         </div>
         <button onClick={this.handleDelete} className="small-actions delete-move-btn btn-floating btn-small waves-effect red accent-3">
@@ -92,4 +94,8 @@ const mapDispatchToProps = (dispatch) => {
   }
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(Move);
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(Move));
+//
+// <NavLink to="/boxes" style={{ color: 'white' }}>
+//   See Boxes
+// </NavLink>

@@ -1,9 +1,10 @@
 import React from 'react';
+// import BoxList from '../components/BoxList'
 
 const BoxContainer = props => {
   return (
     <div className="container">
-      <h2 id="box-cont-title" className="card-panel white black-text">My Boxes</h2>
+      <h2 className="card-panel white black-text cont-title">My Boxes</h2>
     </div>
   )
 }

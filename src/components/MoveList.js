@@ -2,16 +2,19 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { getMoves } from '../actions/moveActions'
 import Move from './Move'
+import { withRouter } from 'react-router-dom'
 
 class MoveList extends React.Component {
 
   componentDidMount() {
     // once i create userReducer, u will pass userId into the fn below:
-    this.props.getMoves(this.props.user.user_id)
+    if (this.props.history.action === "POP") {
+      this.props.getMoves(this.props.user.user_id)
+    }  
   }
 
   render() {
-    // console.log(this.props);
+    console.log("inside MoveList", this.props);
     const mappedMoves = this.props.moves.map((move) => {
       // debugger
       return <Move move={move} key={move.id} />
@@ -44,4 +47,4 @@ const mapDispatchToProps = (dispatch) => {
 // the connect is an HOC which is listening to the redux for when the mapStateToProps changes, i.e., when moves gets updated
 // whenever the moves reducer gets updated
 
-export default connect(mapStateToProps, mapDispatchToProps)(MoveList);
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(MoveList));

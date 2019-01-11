@@ -16,7 +16,7 @@ class App extends Component {
           <NavBar />
           <Switch>
             <Route exact path="/" component={MoveContainer} />
-            <Route exact path="/boxes" component={BoxContainer} />
+            <Route path="/boxes" component={BoxContainer} />
           </Switch>
         </div>
       </Fragment>
