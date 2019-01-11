@@ -6,6 +6,8 @@ class Move extends React.Component {
 
   handleClick = () => {
     console.log("triggered handleClick");
+    this.props.deleteMove(this.props.userId, this.props.move.id)
+
   }
 // // TODO: reformat date!
   render() {
@@ -17,8 +19,8 @@ class Move extends React.Component {
           <span className="move_title card-title">{this.props.move.name}</span>
           <p>{this.props.move.date}</p>
         </div>
-        <div className="see-boxes-link">
-            <button className="waves-effect cyan lighten-2 btn-small">See Boxes</button>
+        <div className="see-boxes-btn">
+            <button className="see-boxes-btn-text waves-effect cyan lighten-2 btn-small">See Boxes</button>
         </div>
         <button onClick={this.handleClick} className="delete-move-btn btn-floating btn-small waves-effect waves-light red">X</button>
       </div>

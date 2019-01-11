@@ -1,5 +1,6 @@
 .card {
-  font-family: 'Karla', sans-serif;
+  /* font-family: 'Karla', sans-serif; */
+  font-family: 'Hammersmith One', sans-serif;
 }
 
 .move-card {
@@ -19,6 +20,9 @@
   right: 0px;
 }
 
+#move-cont-title {
+  font-family: 'Hammersmith One', sans-serif;
+}
 /* .submit-btn {
   padding-top: 27px;
   padding-left: 100px;
@@ -29,9 +33,14 @@
   padding-left: 260px;
 } */
 
-.see-boxes-link {
+.see-boxes-btn {
   color: #ec407a;
-  font-family: 'Karla', sans-serif;
+  /* font-family: 'Karla', sans-serif; */
+
+}
+
+.see-boxes-btn-text {
+    font-family: 'Hammersmith One', sans-serif;
 }
 
 .App {

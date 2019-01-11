@@ -6,7 +6,7 @@ const MoveContainer = props => {
 
     return (
       <div className="container">
-        <h2 className="card-panel white black-text" style={{fontFamily: 'Oswald'}}>My Moves</h2>
+        <h2 id="move-cont-title" className="card-panel white black-text">My Moves</h2>
           <NewMoveForm />
           <MoveList />
       </div>

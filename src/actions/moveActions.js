@@ -40,9 +40,6 @@ export function deleteMove(userId, moveId) {
     fetch(`http://localhost:3000/api/v1/users/${userId}/moves/${moveId}`, {
       method: 'DELETE'
     })
-      .then(r => r.json())
-      .then(deletedMove => {
-        return dispatch({type: 'DELETE_MOVE', payload: deletedMove.id})
-      })
+      return dispatch({type: 'DELETE_MOVE', payload: moveId})
   }
 }
