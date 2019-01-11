@@ -13,6 +13,16 @@ const movesReducer = (state = initialState, action) => {
     case "DELETE_MOVE":
       return state.filter((move) => move.id !== action.payload)
 
+    case "EDIT_MOVE":
+      return state.map((move) => {
+        if (move === action.payload) {
+          // debugger
+          return action.payload
+        } else {
+          return move;
+        }
+      })
+
     default:
       return state
   }

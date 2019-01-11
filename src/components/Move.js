@@ -6,6 +6,15 @@ import { prefillForm } from '../actions/moveActions';
 
 class Move extends React.Component {
 
+  state = {
+    name: this.props.move.name,
+    date: this.props.move.date
+  }
+
+  static getDerivedStateFromProps(props, state) {
+    
+  }
+
   handleClickToEdit = () => {
     // pass the selectedMove to the redux store via selectMove function
     console.log("clicked a move to edit");
@@ -19,13 +28,16 @@ class Move extends React.Component {
   }
 
   reformatDate = (date) => {
-    // debugger
-    let arrayOfDate = date.split("-")
-    let newArrOfDate = []
-    newArrOfDate.push(arrayOfDate[1])
-    newArrOfDate.push(arrayOfDate[2])
-    newArrOfDate.push(arrayOfDate[0])
-    return newArrOfDate.join(',').split(',').join("-")
+    if (date) {
+      let arrayOfDate = date.split("-")
+      let newArrOfDate = []
+      newArrOfDate.push(arrayOfDate[1])
+      newArrOfDate.push(arrayOfDate[2])
+      newArrOfDate.push(arrayOfDate[0])
+      return newArrOfDate.join(',').split(',').join("-")
+    } else {
+      return null;
+    }
   }
 
   render() {
@@ -36,10 +48,10 @@ class Move extends React.Component {
       <div className="card small move-card">
         <div className="card-content white-text">
           <span className="move_title card-title">
-            {this.props.move.name}
+            {this.state.name}
 
           </span>
-          {this.reformatDate(this.props.move.date)}
+          {this.reformatDate(this.state.date)}
         </div>
         <div className="see-boxes-btn">
             <button className="see-boxes-btn-text waves-effect cyan lighten-2 btn-small">
@@ -58,17 +70,12 @@ class Move extends React.Component {
   }
 }
 
-// const mapStateToProps = (state, ownProps) => {
-//   // console.log("inside move, redux store state is", state);
-//   let id = ownProps.match.params.moveId
-// return {
-//   move: state.posts.find(move => move.id === id)
-// }
-// }
 
 function mapStateToProps(state) {
+  console.log("REDUX STATE IS", state);
   return {
-    userId: state.user.user_id
+    userId: state.user.user_id,
+    selectMove: state.move
   }
 }
 

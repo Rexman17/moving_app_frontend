@@ -22,3 +22,5 @@ const singleMoveReducer = (state=initialState, action) => {
 }
 
 export default singleMoveReducer;
+
+// return { ...state, animalSrc: action.payload };
