@@ -14,9 +14,13 @@ class NavBar extends React.Component {
     return (
       <nav className="nav-wrapper white">
        <div className="container">
-        <span className="brand-logo" style={{color: 'black'}}>LOGO</span>
+        <span className="center brand-logo" style={{color: 'black', fontFamily: 'Karla'}}>LOGO GOES HERE</span>
+          {/*<img id="logo" src="../images/logo.png" alt="Packing Pal Logo"/>*/}
          <ul className="left hide-on-med-and-down">
            <li>
+           <button className="nav-btn col s2 btn-small cyan lighten-2" style={{fontFamily: 'Hammersmith One', fontSize: '15px'}}>
+             Log Out
+           </button>
             <button onClick={this.handleClick} className="col s2 btn-small cyan lighten-2" style={{fontFamily: 'Hammersmith One', fontSize: '15px'}}>
               Moves
             </button>

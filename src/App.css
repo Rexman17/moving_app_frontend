@@ -44,14 +44,20 @@
   margin-bottom: 25px;
 }
 
-/* .btn-small {
-  margin-bottom: 4px;
+.nav-btn {
+  margin: 2px;
   margin-right: 5px;
-} */
+}
 
 .cont-title {
   font-family: 'Hammersmith One', sans-serif;
 }
+
+/* #logo {
+  width: 5%;
+  margin-top: 1.2px;
+  margin-right: 20px;
+} */
 
 div#editor {
    display: none;
