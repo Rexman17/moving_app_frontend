@@ -67,7 +67,7 @@ class NewMoveForm extends React.Component {
             <input onChange={this.handleChange} value={this.state.moveDate} name="moveDate"  id="move_date" type="date" autoComplete="off" required/>
             <label htmlFor="move_date">Moving On...</label>
             <div className="submit-btn">
-              <button type="submit" className="col s2 btn-small cyan lighten-2">
+              <button type="submit" className="addOrEditMoveBtn col s2 btn-small cyan lighten-2" style={{fontFamily: 'Hammersmith One', fontSize: '15px'}}>
                 {this.state.editing ? "Submit" : "Add"}
               </button>
             </div>

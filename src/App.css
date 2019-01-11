@@ -12,6 +12,10 @@
     1px 1px 0 #FF;
 } */
 
+.nav-btn {
+  margin-left: 10px;
+}
+
 .move-card {
   background-image: url("/images/move_card_bg_img.jpg");
   background-size: 100%;

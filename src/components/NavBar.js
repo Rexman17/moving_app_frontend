@@ -9,12 +9,12 @@ const NavBar = () => {
     <nav className="white">
      <div class="container nav-wrapper">
        <ul id="nav-mobile" class="left hide-on-med-and-down">
-         <li><a className="black-text" href="sass.html" style={{fontFamily: 'Hammersmith One'}}>
+         <li><button className="nav-btn white-text waves-effect cyan lighten-2 btn-small" style={{fontFamily: 'Hammersmith One'}}>
           Moves
-        </a></li>
-         <li><a className="black-text" href="badges.html" style={{fontFamily: 'Hammersmith One'}}>
+        </button></li>
+         <li><button className="nav-btn white-text waves-effect cyan lighten-2 btn-small"  style={{fontFamily: 'Hammersmith One'}}>
           Logout
-        </a></li>
+        </button></li>
        </ul>
      </div>
     </nav>
