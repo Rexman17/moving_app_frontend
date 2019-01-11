@@ -3,6 +3,15 @@
   font-family: 'Hammersmith One', sans-serif;
 }
 
+/* .card-content {
+    color: white;
+    text-shadow:
+    -1px -1px 0 #FF,
+    1px -1px 0 #FF,
+    -1px 1px 0 #FF,
+    1px 1px 0 #FF;
+} */
+
 .move-card {
   background-image: url("/images/move_card_bg_img.jpg");
   background-size: 100%;
@@ -36,7 +45,6 @@
 .see-boxes-btn {
   color: #ec407a;
   /* font-family: 'Karla', sans-serif; */
-
 }
 
 .see-boxes-btn-text {

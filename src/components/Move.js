@@ -28,7 +28,6 @@ class Move extends React.Component {
       <div className="card small move-card">
         <div className="card-content white-text">
           <span className="move_title card-title">{this.props.move.name}</span>
-          {/*<p>{this.props.move.date)}</p>*/}
           {this.reformatDate(this.props.move.date)}
         </div>
         <div className="see-boxes-btn">
