@@ -1,8 +1,8 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { deleteMove } from '../actions/moveActions'
-import { selectMove } from '../actions/moveActions'
-import { prefillForm } from '../actions/moveActions';
+import { deleteMove, selectMove, prefillForm } from '../actions/moveActions'
+// import BoxContainer from '../containers/BoxContainer'
+import { NavLink } from 'react-router-dom'
 
 class Move extends React.Component {
 
@@ -60,7 +60,9 @@ class Move extends React.Component {
         </div>
         <div className="see-boxes-btn">
             <button className="see-boxes-btn-text waves-effect cyan lighten-2 btn-small">
-              See Boxes
+              <NavLink to="/boxes" style={{ color: 'white' }}>
+                See Boxes
+              </NavLink>
             </button>
         </div>
         <button onClick={this.handleDelete} className="small-actions delete-move-btn btn-floating btn-small waves-effect red accent-3">
