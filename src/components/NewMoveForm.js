@@ -1,14 +1,31 @@
 import React, { Fragment } from 'react';
 import { connect } from 'react-redux';
 import { addMove } from '../actions/moveActions';
+import { prefillForm } from '../actions/moveActions';
 
 class NewMoveForm extends React.Component {
 
   // Local react state for form since we are not passing any data down from this
   state = {
     moveName: '',
-    moveDate: ''
+    moveDate: '',
+    editMode: false
   }
+  // now that we have selectedMove in props, we want to update local state with it to update form values
+  // HOW DO I TRIGGER THE UPDATE STATE OF THE FORM VALUES?
+  // componentWillReceiveProps(nextProps) { // this fn being deprecated
+  //
+  // }
+
+  // static getDerivedStateFromProps(nextProps, prevState){
+  //  if(this.props.move !== prevState.someValue){
+  //    return { someState: nextProps.someValue};
+  // }
+  //   else return null;
+  // }
+  
+
+
 
   handleChange = (event) => {
     // console.log(event.target.value);
@@ -22,8 +39,9 @@ class NewMoveForm extends React.Component {
     this.props.addMove(this.state.moveName, this.state.moveDate, this.props.userId);
   }
 
+
   render() {
-    console.log("move form props", this.props);
+    console.log("%c move form props", 'color: pink', this.props);
     return (
       <Fragment>
         <form onSubmit={this.handleSubmit} className="row new-move-form">
@@ -47,15 +65,17 @@ class NewMoveForm extends React.Component {
 
 
 function mapStateToProps(state) {
-  console.log("state in NewMoveForm", state);
+  // console.log("state in NewMoveForm", state);
   return {
-    userId: state.user.user_id
+    userId: state.user.user_id,
+    selectedMove: state.move
   }
 }
 
 function mapDispatchToProps(dispatch) {
   return {
-    addMove: (name, date, userId) => dispatch(addMove(name, date, userId))
+    addMove: (name, date, userId) => dispatch(addMove(name, date, userId)),
+    prefillForm: (move) => dispatch(prefillForm(move))
   }
 }
 

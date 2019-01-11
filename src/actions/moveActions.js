@@ -44,6 +44,21 @@ export function deleteMove(userId, moveId) {
   }
 }
 
+// SELECT MOVE TO EDIT:
+export function selectMove(move) {
+  return {
+    type: "SELECT_MOVE",
+    payload: move
+  }
+}
+
+// PREFILL EDIT FORM:
+export function prefillForm(move) {
+  return {
+    type: "PREFILL_FORM"
+  }
+}
+
 // PATCH request / EDIT A MOVE:
 // http://localhost:3000/api/v1/users/userid/moves/moveid
 // export function editMove() {

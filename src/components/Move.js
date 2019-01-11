@@ -1,15 +1,20 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { deleteMove } from '../actions/moveActions'
+import { selectMove } from '../actions/moveActions'
+import { prefillForm } from '../actions/moveActions';
 
 class Move extends React.Component {
 
   handleClickToEdit = () => {
-    console.log("triggered handleClickToEdit");
+    // pass the selectedMove to the redux store via selectMove function
+    console.log("clicked a move to edit");
+    this.props.selectMove(this.props.move)
+    this.props.prefillForm(this.props.move)
   }
 
   handleDelete = () => {
-    console.log("triggered handleDelete");
+    // console.log("triggered handleDelete");
     this.props.deleteMove(this.props.userId, this.props.move.id)
   }
 
@@ -27,7 +32,7 @@ class Move extends React.Component {
     // debugger
     console.log("move props", this.props)
     return (
-      <div className="col s12 m6">
+      <div className="col s12 m4">
       <div className="card small move-card">
         <div className="card-content white-text">
           <span className="move_title card-title">
@@ -44,7 +49,7 @@ class Move extends React.Component {
         <button onClick={this.handleDelete} className="delete-move-btn btn-floating btn-small waves-effect red accent-3">
           <span style={{fontFamily: 'Hammersmith One'}}>X</span>
         </button>
-        <button onClick={this.handleClickToEdit} className="edit-move-btn btn-floating btn-small waves-effect orange lighten-1">
+        <button onClick={this.handleClickToEdit} className="edit-move-btn btn-floating btn-small waves-effect deep-orange accent-3">
           <span style={{fontFamily: 'Hammersmith One'}}><i className="material-icons">edit</i></span>
         </button>
       </div>
@@ -69,7 +74,9 @@ function mapStateToProps(state) {
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    deleteMove: (userId, moveId) => dispatch(deleteMove(userId, moveId))
+    deleteMove: (userId, moveId) => dispatch(deleteMove(userId, moveId)),
+    selectMove: (move) => dispatch(selectMove(move)),
+    prefillForm: (move) => dispatch(prefillForm(move))
   }
 }
 

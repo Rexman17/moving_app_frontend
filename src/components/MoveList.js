@@ -28,7 +28,7 @@ class MoveList extends React.Component {
 // CONNECT TO REDUX STORE:
 // Retrieve the data from within the Redux Store:
 const mapStateToProps = (state) => {
-  console.log("props in movelist", state);
+  // console.log("props in movelist", state);
   return {
     moves: state.moves,
     user: state.user

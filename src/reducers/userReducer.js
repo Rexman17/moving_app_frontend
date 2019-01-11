@@ -6,10 +6,10 @@ const initialState = {
   user_id: 1
 }
 
-const userReducer = (state = initialState, action) => {
+const userReducer = (state=initialState, action) => {
 
   switch (action.type) {
-    
+
     default:
       return state;
 

@@ -12,6 +12,10 @@ import thunk from 'redux-thunk';
 
 // Create the Redux store:
 const store = createStore(rootReducer, applyMiddleware(thunk))
+// console.log("REDUX STORE IS", store);
+// console.log("==================");
+// console.log("get state function", store.getState());
+// console.log('%c get state function','background: blue; color: white; display: block;', store.getState());
 // Wrap App with Provider
 ReactDOM.render(
   <Provider store={store}>
