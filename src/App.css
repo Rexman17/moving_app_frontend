@@ -35,6 +35,12 @@
   right: 37px;
 }
 
+.btn-small {
+  marin: 10px;
+  margin-bottom: 4px;
+  margin-right: 5px;
+}
+
 #move-cont-title {
   font-family: 'Hammersmith One', sans-serif;
 }

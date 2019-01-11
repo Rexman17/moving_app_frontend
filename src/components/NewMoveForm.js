@@ -23,7 +23,17 @@ class NewMoveForm extends React.Component {
   // }
   //   else return null;
   // }
-  
+  // this.props.selectedMove
+  componentDidUpdate(prevProps) {
+  // Typical usage (don't forget to compare props):
+    if (this.props.selectedMove !== prevProps.selectedMove) {
+      this.setState({
+        moveName: this.props.selectedMove.name,
+        moveDate: this.props.selectedMove.date,
+        editMode: !this.state.editMode
+      }, () => console.log("componentDidUpdate", this.state))
+    }
+  }
 
 
 
