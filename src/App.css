@@ -35,11 +35,15 @@
   right: 37px;
 }
 
-.btn-small {
-  marin: 10px;
+.small-actions {
+  margin-right: 155px;
+  margin-bottom: 25px;
+}
+
+/* .btn-small {
   margin-bottom: 4px;
   margin-right: 5px;
-}
+} */
 
 #move-cont-title {
   font-family: 'Hammersmith One', sans-serif;

@@ -63,10 +63,10 @@ class Move extends React.Component {
               See Boxes
             </button>
         </div>
-        <button onClick={this.handleDelete} className="delete-move-btn btn-floating btn-small waves-effect red accent-3">
+        <button onClick={this.handleDelete} className="small-actions delete-move-btn btn-floating btn-small waves-effect red accent-3">
           <span style={{fontFamily: 'Hammersmith One'}}>X</span>
         </button>
-        <button onClick={this.handleClickToEdit} className="edit-move-btn btn-floating btn-small waves-effect deep-orange accent-3">
+        <button onClick={this.handleClickToEdit} className="small-actions edit-move-btn btn-floating btn-small waves-effect deep-orange accent-3">
           <span style={{fontFamily: 'Hammersmith One'}}><i className="material-icons">edit</i></span>
         </button>
       </div>
