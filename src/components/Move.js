@@ -75,7 +75,6 @@ class Move extends React.Component {
   }
 }
 
-
 function mapStateToProps(state) {
   console.log("REDUX STATE IS", state);
   return {
