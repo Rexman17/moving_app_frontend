@@ -29,9 +29,20 @@
   right: 0px;
 }
 
+.edit-move-btn {
+  position: absolute;
+  bottom: 0px;
+  right: 37px;
+}
+
 #move-cont-title {
   font-family: 'Hammersmith One', sans-serif;
 }
+
+div#editor {
+   display: none;
+}
+
 /* .submit-btn {
   padding-top: 27px;
   padding-left: 100px;
