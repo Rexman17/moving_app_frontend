@@ -22,6 +22,7 @@ class Move extends React.Component {
         date: props.move.date
       })
     }
+    return null;
   }
 
   handleClickToEdit = () => {

@@ -25,3 +25,6 @@ class App extends Component {
 }
 
 export default withRouter(App);
+// Route parameters?
+// Route path="/:move_id"
+//
