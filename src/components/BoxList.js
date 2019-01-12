@@ -20,7 +20,7 @@ class BoxList extends React.Component {
     })
 
     return (
-      <div className="row">
+      <div className="col s9">
           {mappedBoxes}
       </div>
     )
