@@ -1,6 +1,6 @@
 import React from 'react';
 import BoxList from '../components/BoxList'
-import BoxesSideBar from '../components/BoxesSideBar'
+import ItemsSideBar from '../components/ItemsSideBar'
 
 const BoxContainer = props => {
   return (
@@ -8,7 +8,7 @@ const BoxContainer = props => {
       <h2 className="card-panel white black-text cont-title">My Boxes</h2>
       <div className="row">
         <BoxList />
-        <BoxesSideBar />
+        <ItemsSideBar />
       </div>
     </div>
   )

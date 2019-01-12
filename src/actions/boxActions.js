@@ -4,6 +4,7 @@ export function getBoxes(userId, moveId) {
     fetch(`http://localhost:3000/api/v1/users/${userId}/moves/${moveId}/boxes`)
       .then(r => r.json())
       .then(boxes => {
+        // debugger
         return dispatch({type: 'GET_BOXES', payload: boxes})
       })
   }

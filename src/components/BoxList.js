@@ -7,13 +7,13 @@ import { getBoxes } from '../actions/boxActions'
 class BoxList extends React.Component {
 
   componentDidMount() {
-
+    if (this.props.history.action === "PUSH") {
       this.props.getBoxes(this.props.user.user_id, this.props.move.id)
-
+    }
   }
 
   render() {
-    console.log("boxlist props", this.props);
+    console.log("boxlist props", this.props.history);
 
     const mappedBoxes = this.props.boxes.map((box, idx) => {
       return <Box box={box} key={box.id} idx={idx}/>
@@ -37,7 +37,7 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
   return {
-    getBoxes: () => dispatch(getBoxes())
+    getBoxes: (userId, moveId) => dispatch(getBoxes(userId, moveId))
   }
 }
 
