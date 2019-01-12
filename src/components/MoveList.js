@@ -14,7 +14,7 @@ class MoveList extends React.Component {
   }
 
   render() {
-    console.log("inside MoveList", this.props);
+    // console.log("inside MoveList", this.props);
     const mappedMoves = this.props.moves.map((move) => {
       // debugger
       return <Move move={move} key={move.id} />

@@ -5,22 +5,31 @@ import { connect } from 'react-redux';
 import { getBoxes } from '../actions/boxActions'
 
 class BoxList extends React.Component {
-  //
-  // componentDidMount() {
-  //
-  // }
+
+  componentDidMount() {
+
+      this.props.getBoxes(this.props.user.user_id, this.props.move.id)
+    
+  }
 
   render() {
     console.log("boxlist props", this.props);
+
+    const mappedBoxes = this.props.boxes.map((box) => {
+      return <Box box={box} key={box.id} />
+    })
+
     return (
-      <div>MAPPED BOXES SHOULD GO IN HERE AND route params</div>
+      <div className="row">
+          {mappedBoxes}
+      </div>
     )
   }
 }
 
 const mapStateToProps = state => {
-  // debugger
   return {
+    move: state.move,
     boxes: state.boxes,
     user: state.user
   }
@@ -33,8 +42,3 @@ const mapDispatchToProps = dispatch => {
 }
 
 export default withRouter(connect(mapStateToProps, mapDispatchToProps)(BoxList))
-
-
-
-// let id = this.props.match.params.move_id
-// }

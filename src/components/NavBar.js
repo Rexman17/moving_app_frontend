@@ -6,7 +6,7 @@ class NavBar extends React.Component {
   // console.log("NAVBAR",props);
   handleClick = () => {
     // this.props.history.clear()
-    this.props.history.replace('/')
+    this.props.history.replace('/moves')
   }
 
   render() {

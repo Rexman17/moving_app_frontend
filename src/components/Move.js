@@ -50,9 +50,14 @@ class Move extends React.Component {
     }
   }
 
+  handleClickToSeeBoxes = () => {
+    this.props.selectMove(this.props.move)
+    this.props.history.push('/boxes')
+  }
+
   render() {
     // debugger
-    console.log("move props", this.props)
+    // console.log("move props", this.props)
     return (
       <div className="col s12 m4">
       <div className="card small move-card">
@@ -63,7 +68,7 @@ class Move extends React.Component {
           {this.reformatDate(this.state.date)}
         </div>
         <div className="see-boxes-btn">
-            <button onClick={() => this.props.history.push('/boxes')} className="see-boxes-btn-text waves-effect cyan lighten-2 btn-small">
+            <button onClick={this.handleClickToSeeBoxes} className="see-boxes-btn-text waves-effect cyan lighten-2 btn-small">
               See Boxes
             </button>
         </div>
