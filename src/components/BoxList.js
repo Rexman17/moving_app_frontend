@@ -29,6 +29,7 @@ class BoxList extends React.Component {
 }
 
 const mapStateToProps = state => {
+  console.log("STATE IS", state);
   return {
     move: state.move,
     boxes: state.boxes,
