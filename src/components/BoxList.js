@@ -9,14 +9,14 @@ class BoxList extends React.Component {
   componentDidMount() {
 
       this.props.getBoxes(this.props.user.user_id, this.props.move.id)
-    
+
   }
 
   render() {
     console.log("boxlist props", this.props);
 
-    const mappedBoxes = this.props.boxes.map((box) => {
-      return <Box box={box} key={box.id} />
+    const mappedBoxes = this.props.boxes.map((box, idx) => {
+      return <Box box={box} key={box.id} idx={idx}/>
     })
 
     return (
