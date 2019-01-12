@@ -5,7 +5,7 @@ const movesReducer = (state=initialState, action) => {
 
   switch (action.type) {
     case "GET_MOVES":
-      return [...state, ...action.payload]
+      return [...action.payload]
 
     case "ADD_MOVE":
       return [...state, action.payload]

@@ -51,13 +51,13 @@ class Move extends React.Component {
   }
 
   handleClickToSeeBoxes = () => {
+    const { id, user_id } = this.props.move
     this.props.selectMove(this.props.move)
-    this.props.history.push('/boxes')
+    this.props.history.push(`users/${user_id}/moves/${id}/boxes`)
   }
 
   render() {
     // debugger
-    // console.log("move props", this.props)
     return (
       <div className="col s12 m4">
       <div className="card small move-card">

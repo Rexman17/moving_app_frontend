@@ -7,9 +7,10 @@ import { getBoxes } from '../actions/boxActions'
 class BoxList extends React.Component {
 
   componentDidMount() {
-    if (this.props.history.action === "PUSH") {
-      this.props.getBoxes(this.props.user.user_id, this.props.move.id)
-    }
+    const { moveId, userId } = this.props.match.params
+    // if (this.props.history.action === "PUSH") {
+      this.props.getBoxes(userId, moveId)
+    // }
   }
 
   render() {

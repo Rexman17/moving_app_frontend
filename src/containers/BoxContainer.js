@@ -7,7 +7,7 @@ const BoxContainer = props => {
     <div className="container">
       <h2 className="card-panel white black-text cont-title">My Boxes</h2>
       <div className="row">
-        <BoxList />
+        <BoxList props={props}/>
         <ItemsSideBar />
       </div>
     </div>

@@ -8,9 +8,9 @@ class MoveList extends React.Component {
 
   componentDidMount() {
     // once i create userReducer, u will pass userId into the fn below:
-    if (this.props.history.action === "POP") {
+    // if (this.props.history.action === "POP") {
       this.props.getMoves(this.props.user.user_id)
-    }
+    // }
   }
 
   render() {

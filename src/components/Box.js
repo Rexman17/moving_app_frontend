@@ -5,6 +5,7 @@ class Box extends React.Component {
 
 
   render() {
+    // debugger
     console.log("box props", this.props);
     return (
       <div className="col s12 m4">
