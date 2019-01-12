@@ -8,7 +8,7 @@ const BoxContainer = props => {
       <h2 className="card-panel white black-text cont-title">My Boxes</h2>
       <div className="row">
         <BoxList props={props}/>
-        <ItemsSideBar />
+        <ItemsSideBar props={props}/>
       </div>
     </div>
   )
