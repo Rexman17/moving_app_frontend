@@ -4,8 +4,9 @@ import movesReducer from './movesReducer'
 import userReducer from './userReducer'
 import singleMoveReducer from './singleMoveReducer'
 import boxesReducer from './boxesReducer'
+import itemsReducer from './itemsReducer'
 
-const rootReducer = combineReducers({ moves: movesReducer, user: userReducer, move: singleMoveReducer, boxes: boxesReducer })
+const rootReducer = combineReducers({ moves: movesReducer, user: userReducer, move: singleMoveReducer, boxes: boxesReducer, moveItems: itemsReducer })
 
 // making key value pairs for a global store
 

@@ -4,7 +4,7 @@ const itemsReducer = (state=initialState, action) => {
 
   switch (action.type) {
     case "GET_MOVE_ITEMS":
-      // console.log("===========payload", action.payload)
+      // console.log("===========payload", action.payload, action)
       return [...action.payload]
 
     default:

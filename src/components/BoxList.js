@@ -3,6 +3,7 @@ import Box from './Box';
 import { withRouter } from 'react-router-dom'
 import { connect } from 'react-redux';
 import { getBoxes } from '../actions/boxActions'
+// import { getMoveItems } from '../actions/itemActions'
 
 class BoxList extends React.Component {
 
@@ -10,10 +11,11 @@ class BoxList extends React.Component {
     // destructuring
     const { moveId, userId } = this.props.match.params
     this.props.getBoxes(userId, moveId)
+    // this.props.getMoveItems(userId, moveId)
   }
 
   render() {
-    console.log("BoxList props", this.props);
+    // console.log("BoxList props", this.props);
     const mappedBoxes = this.props.boxes.map((box, idx) => {
       return <Box box={box} key={box.id} idx={idx}/>
     })
@@ -37,6 +39,7 @@ const mapStateToProps = state => {
 const mapDispatchToProps = dispatch => {
   return {
     getBoxes: (userId, moveId) => dispatch(getBoxes(userId, moveId))
+    // getMoveItems: (userId, moveId) => dispatch(getMoveItems(userId, moveId))
   }
 }
 

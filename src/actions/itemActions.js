@@ -6,8 +6,12 @@ export function getMoveItems(userId, moveId) {
   return(dispatch) => {
     fetch(`http://localhost:3000/api/v1/users/${userId}/moves/${moveId}/boxes`)
       .then(r => r.json())
-      .then(items => {
-        return dispatch({type: 'GET_MOVE_ITEMS', payload: items })
+      .then(boxesWithItems => {
+        // debugger
+        let nestedArrayOfItems = boxesWithItems.map(function(box) {return box.items})
+        let arrayOfItems = [].concat.apply([], nestedArrayOfItems)
+        // debugger
+        return dispatch({type: 'GET_MOVE_ITEMS', payload: arrayOfItems })
       })
   }
 }
