@@ -18,7 +18,7 @@ class ItemsSideBar extends React.Component {
     })
 
     return (
-      <div className="col s3" style={{border: 'ridge #4dd0e1 3px', marginTop: '15px'}}>
+      <div className="col s3 z-depth-3" style={{border: 'ridge #4dd0e1 3px', marginTop: '15px'}}>
         <h4>ITEMS</h4>
         {moveItems}
       </div>

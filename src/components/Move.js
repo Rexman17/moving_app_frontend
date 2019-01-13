@@ -59,7 +59,7 @@ class Move extends React.Component {
     // debugger
     return (
       <div className="col s12 m4">
-      <div className="card small move-card">
+      <div className="card small move-card z-depth-5">
         <div className="card-content white-text">
           <span className="move_title card-title">
             {this.state.name}

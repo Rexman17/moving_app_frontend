@@ -3,7 +3,7 @@ import BoxList from '../components/BoxList'
 import ItemsSideBar from '../components/ItemsSideBar'
 import MyBoxesHeader from '../components/MyBoxesHeader'
 import NewBoxForm from '../components/NewBoxForm'
-
+import ItemSearchBar from '../components/ItemSearchBar'
 
 const BoxContainer = props => {
   // console.log("BoxContainer", props);
@@ -13,6 +13,7 @@ const BoxContainer = props => {
       <div className="row">
         <MyBoxesHeader />
         <NewBoxForm />
+        <ItemSearchBar />
         <BoxList props={props}/>
         <ItemsSideBar props={props}/>
       </div>

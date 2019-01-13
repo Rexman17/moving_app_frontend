@@ -38,10 +38,10 @@ class Box extends React.Component {
   }
 
   render() {
-    console.log("box props", this.props);
+
     return (
       <div className="col s12 m4">
-        <div className="card small"><br />
+        <div className="card small z-depth-5" style={{padding: '2px'}}><br />
         <p>Box Number: {this.props.idx + 1}</p>
         <span className="card-title">
           Name: "{this.state.name}"
