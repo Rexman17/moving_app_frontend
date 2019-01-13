@@ -18,7 +18,7 @@ class MyBoxesHeader extends React.Component {
     return (
       <div>
         <h2 className="card-panel white black-text cont-title">
-          My Boxes for MOVE NAME
+          My Boxes for [MOVE NAME]
         </h2>
       </div>
     )

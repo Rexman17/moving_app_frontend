@@ -54,7 +54,25 @@ export function prefillForm(box) {
   }
 }
 
-
+// PATCH REQUEST / EDIT BOX
+// `http://localhost:3000/api/v1/users/${userId}/moves/${moveId}/boxes/${boxId}`
+export function editBox(name, category, userId, moveId, boxId) {
+  return(dispatch) => {
+    fetch(`http://localhost:3000/api/v1/users/${userId}/moves/${moveId}/boxes/${boxId}`, {
+      method: 'PATCH',
+      headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+      body: JSON.stringify({
+        name: name,
+        category: category
+      })
+    })
+      .then(r => r.json())
+      .then(editedBox => {
+        debugger
+        return dispatch({ type: "EDIT_BOX", payload: editedBox })
+      })
+  }
+}
 
 
 

@@ -13,6 +13,17 @@ const boxesReducer = (state=initialState, action) => {
     case "DELETE_BOX":
       return state.filter((box) => box.id !== action.payload)
 
+    case "EDIT_BOX":
+      return state.map((box) => {
+
+        if (box.id === action.payload.id) {
+          // debugger
+          return action.payload
+        } else {
+          return box;
+        }
+      })
+
     default:
       return state;
   }
