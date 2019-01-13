@@ -24,8 +24,8 @@ class BoxContainer extends React.Component {
           <MyBoxesHeader />
           <NewBoxForm />
           <ItemSearchBar handleSearch={this.handleSearch} searchTerm={this.state.searchTerm} />
-          <BoxList props={this.props}/>
-          <ItemsSideBar props={this.props}/>
+          <BoxList searchTerm={this.state.searchTerm} props={this.props}/>
+          <ItemsSideBar searchTerm={this.state.searchTerm} props={this.props}/>
         </div>
       </div>
     )

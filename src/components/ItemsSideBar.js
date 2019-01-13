@@ -12,9 +12,17 @@ class ItemsSideBar extends React.Component {
   }
 
   render() {
-    // console.log("ItemsSideBar PROPS", this.props);
-    const moveItems = this.props.moveItems.map((moveItem) => {
-      return <li key={moveItem.id}>{moveItem.name} -- Box: [BOX IDX + 1]</li>
+    console.log("ItemsSideBar PROPS", this.props);
+    // const moveItems = this.props.moveItems.map((moveItem) => {
+    //   return <li key={moveItem.id}>{moveItem.name} -- Box: [BOX IDX + 1]</li>
+    // })
+
+    const filteredItems = this.props.moveItems.filter((item) => {
+      return item.name.toLowerCase().includes(this.props.searchTerm)
+    })
+
+    const moveItems = filteredItems.map((item) => {
+      return  <li key={item.id}>{item.name} -- Box: [BOX IDX + 1]</li>
     })
 
     return (
