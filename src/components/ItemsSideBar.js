@@ -12,7 +12,7 @@ class ItemsSideBar extends React.Component {
   }
 
   render() {
-    console.log("ItemsSideBar PROPS", this.props);
+    // console.log("ItemsSideBar PROPS", this.props);
     // const moveItems = this.props.moveItems.map((moveItem) => {
     //   return <li key={moveItem.id}>{moveItem.name} -- Box: [BOX IDX + 1]</li>
     // })

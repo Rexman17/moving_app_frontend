@@ -14,31 +14,20 @@ class BoxList extends React.Component {
   }
 
   render() {
-    // console.log("BoxList props", this.props);
-
-    // let filteredBoxes = ''
-    // for (var items in this.props.boxes) {
-    //   filteredBoxes = this.props.boxes.filter((box) => {
-    //     debugger
-    //     return box.items.name.toLowerCase().includes(this.state.searchTerm)
-    //   })
-    // }
-
-
-    // const mappedBoxes = filteredBoxes.map((box, idx) => {
-    //   return <Box box={box} key={box.id} idx={idx}/>
-    // })
-
+    // console.log("BoxList props", this.props)
     const mappedBoxes = this.props.boxes.map((box, idx) => {
       return <Box box={box} key={box.id} idx={idx}/>
     })
 
-     // return transaction.description.toLowerCase().includes(this.state.searchTerm) || transaction.category.toLowerCase().includes(this.state.searchTerm)
+    // attempt to filter but it keeps returning the filtered items not the boxes!
+    // var filteredBoxes = boxes.map((box) => {
+    //   return box.items.filter((i) => {
+    //     return i.name.includes('e')
+    //   })
+    // })
 
-     // let mappedBoxes = this.props.boxes.map((box) => box.items)
-     // mappedBoxes = [].concat.apply([], mappedBoxes)
-     // mappedBoxes = mappedBoxes.filter((item) => item.name.toLowerCase().includes(this.state.searchTerm))
 
+// =================================
     return (
       <div className="col s9">
           {mappedBoxes}

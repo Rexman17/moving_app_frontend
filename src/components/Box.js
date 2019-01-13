@@ -41,7 +41,7 @@ class Box extends React.Component {
 
     return (
       <div className="col s12 m4">
-        <div className="card small z-depth-5" style={{padding: '2px'}}><br />
+        <div className="card small z-depth-5" style={{padding: '5px'}}>
         <p>Box Number: {this.props.idx + 1}</p>
         <span className="card-title">
           Name: "{this.state.name}"
