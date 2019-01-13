@@ -22,12 +22,14 @@ class ItemsSideBar extends React.Component {
     })
 
     const moveItems = filteredItems.map((item) => {
-      return  <li key={item.id}>{item.name} -- Box: [BOX IDX + 1]</li>
+      return  <li className="item-li" key={item.id} style={{fontFamily: 'Poppins', fontSize: '18px', color: 'black'}}>
+                {item.name} - Box: [BOX IDX + 1]
+              </li>
     })
 
     return (
-      <div className="col s3 z-depth-3" style={{border: 'ridge #4dd0e1 3px', marginTop: '15px'}}>
-        <h4>ITEMS</h4>
+      <div id="side-bar" className="col s3 z-depth-3" style={{border: 'ridge #4dd0e1 3px', marginTop: '15px'}}>
+        <h4 className="card title">ITEMS</h4>
         {moveItems}
       </div>
     )
