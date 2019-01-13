@@ -1,13 +1,13 @@
 const initialState = {
   id: null,
   name: '',
-  date: ''
+  category: ''
 }
 
-const singleMoveReducer = (state=initialState, action) => {
+const singleBoxReducer = (state=initialState, action) => {
 
   switch (action.type) {
-    case "SELECT_MOVE":
+    case "SELECT_BOX":
       return {...state, ...action.payload}
 
     case "PREFILL_FORM":
@@ -21,4 +21,4 @@ const singleMoveReducer = (state=initialState, action) => {
 
 }
 
-export default singleMoveReducer;
+export default singleBoxReducer;

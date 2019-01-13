@@ -8,12 +8,13 @@ class Move extends React.Component {
   constructor(props) {
     super(props)
 
+    const { name, date } = this.props.move // destructuring
+
     this.state = {
-      name: this.props.move.name,
-      date: this.props.move.date
+      name: name,
+      date: date
     }
   }
-
 
   static getDerivedStateFromProps(props, state) {
     if (props.move.name !== state.name || props.move.date !== state.date) {
@@ -26,9 +27,7 @@ class Move extends React.Component {
   }
 
   handleClickToEdit = () => {
-    // pass the selectedMove to the redux store via selectMove function
-    // console.log("clicked a move to edit");x
-    this.props.selectMove(this.props.move)
+    this.props.selectMove(this.props.move) // pass selected move to redux store
     this.props.prefillForm(this.props.move)
   }
 
@@ -87,7 +86,6 @@ class Move extends React.Component {
 }
 
 function mapStateToProps(state) {
-  // console.log("REDUX STATE IS", state);
   return {
     userId: state.user.user_id,
   }

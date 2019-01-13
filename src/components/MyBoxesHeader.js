@@ -27,7 +27,7 @@ class MyBoxesHeader extends React.Component {
 
 const mapStateToProps = state => {
   return {
-    moveName: state.move.name,
+    moveName: state.selectedMove.name,
   }
 }
 

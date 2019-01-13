@@ -39,6 +39,21 @@ export function deleteBox(userId, moveId, boxId) {
   }
 }
 
+// SELECT BOX TO EDIT:
+export function selectBox(box) {
+  return {
+    type: "SELECT_BOX",
+    payload: box
+  }
+}
+
+// PREFILL EDIT FORM:
+export function prefillForm(box) {
+  return {
+    type: "PREFILL_FORM"
+  }
+}
+
 
 
 

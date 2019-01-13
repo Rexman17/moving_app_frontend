@@ -4,6 +4,7 @@ import { getMoveItems } from '../actions/itemActions'
 import { withRouter } from 'react-router-dom'
 
 class ItemsSideBar extends React.Component {
+
   componentDidMount() {
     // destructuring
     const { moveId, userId } = this.props.match.params

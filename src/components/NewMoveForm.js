@@ -1,6 +1,6 @@
 import React, { Fragment } from 'react';
 import { connect } from 'react-redux';
-import { addMove, prefillForm, editMove } from '../actions/moveActions';
+import { addMove, editMove } from '../actions/moveActions';
 
 
 class NewMoveForm extends React.Component {
@@ -90,7 +90,7 @@ function mapStateToProps(state) {
 function mapDispatchToProps(dispatch) {
   return {
     addMove: (name, date, userId) => dispatch(addMove(name, date, userId)),
-    prefillForm: (move) => dispatch(prefillForm(move)),
+
     editMove: (name, date, userId, moveId) => dispatch(editMove(name, date, userId, moveId))
   }
 }
