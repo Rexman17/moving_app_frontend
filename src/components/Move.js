@@ -1,7 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { deleteMove, selectMove, prefillForm } from '../actions/moveActions'
-// import BoxContainer from '../containers/BoxContainer'
 import { withRouter } from 'react-router-dom'
 
 class Move extends React.Component {
@@ -51,8 +50,8 @@ class Move extends React.Component {
 
   handleClickToSeeBoxes = () => {
     const { id, user_id } = this.props.move
-    this.props.selectMove(this.props.move)
-    this.props.history.push(`users/${user_id}/moves/${id}/boxes`)
+    // this.props.selectMove(this.props.move)
+    this.props.history.push(`/users/${user_id}/moves/${id}/boxes`)
   }
 
   render() {

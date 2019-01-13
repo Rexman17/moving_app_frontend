@@ -4,6 +4,7 @@ import { withRouter } from 'react-router'
 import './App.css';
 import MoveContainer from './containers/MoveContainer'
 import BoxContainer from './containers/BoxContainer'
+import ItemsContainer from './containers/ItemsContainer'
 import NavBar from './components/NavBar'
 import { Route, Switch } from 'react-router-dom'
 
@@ -17,6 +18,7 @@ class App extends Component {
           <Switch>
             <Route exact path="/moves" component={MoveContainer} />
             <Route path="/users/:userId/moves/:moveId/boxes" render={() => <BoxContainer/>} />
+            <Route path="/users/:userId/moves/:moveId/boxes/:boxId/items" render={() => <ItemsContainer/>} />
           </Switch>
         </div>
       </Fragment>
@@ -25,6 +27,3 @@ class App extends Component {
 }
 
 export default withRouter(App);
-// Route parameters?
-// Route path="/:move_id"
-//

@@ -22,7 +22,7 @@ class ItemsSideBar extends React.Component {
     })
 
     const moveItems = filteredItems.map((item) => {
-      return  <li className="item-li" key={item.id} style={{fontFamily: 'Poppins', fontSize: '18px', color: 'black'}}>
+      return  <li className="item-li" key={item.id} style={{fontFamily: 'Josefin Sans', fontSize: '18px', color: 'black'}}>
                 {item.name} - Box: [BOX IDX + 1]
               </li>
     })

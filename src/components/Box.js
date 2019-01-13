@@ -37,11 +37,13 @@ class Box extends React.Component {
   }
 
   handleClickToSeeItems = () => {
-    // console.log("trying to see items");
+    const { userId, moveId } = this.props.match.params
+    this.props.history.push(`/users/${userId}/moves/${moveId}/boxes/${this.props.box.id}/items`)
   }
 
   render() {
-
+    // const { userId, moveId } = this.props.match.params
+    console.log("box", this.props);
     return (
       <div className="col s12 m5">
         <div className="card small box-card z-depth-5" style={{padding: '5px'}}>
