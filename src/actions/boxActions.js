@@ -68,7 +68,6 @@ export function editBox(name, category, userId, moveId, boxId) {
     })
       .then(r => r.json())
       .then(editedBox => {
-        debugger
         return dispatch({ type: "EDIT_BOX", payload: editedBox })
       })
   }

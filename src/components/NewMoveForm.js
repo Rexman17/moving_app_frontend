@@ -1,6 +1,6 @@
 import React, { Fragment } from 'react';
 import { connect } from 'react-redux';
-import { addMove, editMove } from '../actions/moveActions';
+import { addMove, prefillForm, editMove } from '../actions/moveActions';
 
 
 class NewMoveForm extends React.Component {
@@ -42,7 +42,7 @@ class NewMoveForm extends React.Component {
         moveDate: ''
       })
 
-    } else if (this.state.editing === true) { // EDIT MODE
+    } else if (this.state.editing === true) {
         this.props.editMove(this.state.moveName, this.state.moveDate, this.props.userId, this.props.selectedMove.id)
 
         this.setState({
@@ -60,12 +60,10 @@ class NewMoveForm extends React.Component {
       <Fragment>
         <form onSubmit={this.handleSubmit} className="row new-move-form">
           <div className="input-field col s6">
-            <input onChange={this.handleChange} value={this.state.moveName} name="moveName" id="move_name" type="text" autoComplete="off" required/>
-          <label htmlFor="move_name">Name Your Move</label>
+            <input onChange={this.handleChange} placeholder="Move Name..." value={this.state.moveName} name="moveName" id="move_name" type="text" autoComplete="off" required/>
         </div>
           <div className="input-field col s6">
             <input onChange={this.handleChange} value={this.state.moveDate} name="moveDate"  id="move_date" type="date" autoComplete="off" required/>
-            <label htmlFor="move_date">Moving On...</label>
             <div className="submit-btn">
               <button type="submit" className="addOrEditMoveBtn col s2 btn-small cyan lighten-2" style={{fontFamily: 'Hammersmith One', fontSize: '15px'}}>
                 {this.state.editing ? "Submit" : "Add"}
@@ -83,14 +81,14 @@ function mapStateToProps(state) {
   // console.log("state in NewMoveForm", state);
   return {
     userId: state.user.user_id,
-    selectedMove: state.move  // move selected to edit
+    selectedMove: state.selectedMove
   }
 }
 
 function mapDispatchToProps(dispatch) {
   return {
     addMove: (name, date, userId) => dispatch(addMove(name, date, userId)),
-
+    prefillForm: (move) => dispatch(prefillForm(move)),
     editMove: (name, date, userId, moveId) => dispatch(editMove(name, date, userId, moveId))
   }
 }

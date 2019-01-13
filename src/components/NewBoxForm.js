@@ -61,12 +61,10 @@ class NewBoxForm extends React.Component {
       <Fragment>
         <form onSubmit={this.handleSubmit} className="row">
           <div className="input-field col s6">
-            <input onChange={this.handleChange} name="boxName" id="box_name" type="text" value={this.state.boxName} autoComplete="off" required/>
-            <label htmlFor="box_name">Box Name</label>
+            <input onChange={this.handleChange} placeholder="Box Name..." name="boxName" id="box_name" type="text" value={this.state.boxName} autoComplete="off" required/>
           </div>
           <div className="input-field col s6">
-            <input onChange={this.handleChange} name="boxCategory" id="box_category" type="text" value={this.state.boxCategory} autoComplete="off" required/>
-            <label htmlFor="box_category">Category, i.e., what room do I belong in?</label>
+            <input onChange={this.handleChange} placeholder="Category, i.e., what room do I belong in?" name="boxCategory" id="box_category" type="text" value={this.state.boxCategory} autoComplete="off" required/>
             <div className="submit-btn">
               <button type="submit" className="addOrEditMoveBtn col s2 btn-small cyan lighten-2" style={{fontFamily: 'Hammersmith One', fontSize: '15px'}}>
                 {this.state.editing ? "Submit" : "Add"}
