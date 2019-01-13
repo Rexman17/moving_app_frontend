@@ -2,6 +2,8 @@ import React from 'react';
 import BoxList from '../components/BoxList'
 import ItemsSideBar from '../components/ItemsSideBar'
 import MyBoxesHeader from '../components/MyBoxesHeader'
+import NewBoxForm from '../components/NewBoxForm'
+
 
 const BoxContainer = props => {
   // console.log("BoxContainer", props);
@@ -10,6 +12,7 @@ const BoxContainer = props => {
       {/*<h2 className="card-panel white black-text cont-title">My Boxes</h2>*/}
       <div className="row">
         <MyBoxesHeader />
+        <NewBoxForm />
         <BoxList props={props}/>
         <ItemsSideBar props={props}/>
       </div>

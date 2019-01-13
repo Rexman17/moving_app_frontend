@@ -60,7 +60,7 @@ class NewMoveForm extends React.Component {
       <Fragment>
         <form onSubmit={this.handleSubmit} className="row new-move-form">
           <div className="input-field col s6">
-            <input onChange={this.handleChange} value={this.state.moveName} name="moveName" placeholder="Move Name" id="move_name" type="text" autoComplete="off" required/>
+            <input onChange={this.handleChange} value={this.state.moveName} name="moveName" id="move_name" type="text" autoComplete="off" required/>
           <label htmlFor="move_name">Name Your Move</label>
         </div>
           <div className="input-field col s6">
@@ -72,7 +72,6 @@ class NewMoveForm extends React.Component {
               </button>
             </div>
           </div>
-
         </form>
       </Fragment>
     )

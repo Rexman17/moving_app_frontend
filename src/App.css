@@ -1,6 +1,7 @@
 .card {
   /* font-family: 'Karla', sans-serif; */
   font-family: 'Hammersmith One', sans-serif;
+  align-content: center;
 }
 
 /* .card-content {
@@ -27,22 +28,24 @@
   padding-top: 90px;
 }
 
-.delete-move-btn {
-  position: absolute;
+ .delete-move-btn {
+  position: relative;
   bottom: 0px;
   right: 0px;
 }
 
 .edit-move-btn {
-  position: absolute;
+  position: relative;
   bottom: 0px;
-  right: 37px;
+  right: 0px;
+  margin: 5px;
 }
 
-.small-actions {
-  margin-right: 156px;
-  margin-bottom: 25px;
-}
+/* .small-actions {
+  position: absolute;
+  top: 0px;
+  right: 0px;
+} */
 
 .nav-btn {
   margin: 2px;
