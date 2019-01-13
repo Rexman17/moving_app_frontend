@@ -18,7 +18,7 @@ class BoxContainer extends React.Component {
 
   render() {
     return (
-      <div className="container">
+      <div className="container" id="box-cont">
         {/*<h2 className="card-panel white black-text cont-title">My Boxes</h2>*/}
         <div className="row">
           <MyBoxesHeader />

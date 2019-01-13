@@ -38,6 +38,22 @@
   opacity: 1;
 }
 
+.box-card {
+  background-image: url("/images/rotated.jpg");
+  background-size: 100%;
+  background-repeat: no-repeat;
+  opacity: 1;
+  /* background-position: 100%; */
+}
+
+/* #box-cont {
+  background: url("/images/rotated.jpg") no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+   -o-background-size: cover;
+   background-size: cover;
+} */
+
 .card-title {
   padding-top: 90px;
 }
