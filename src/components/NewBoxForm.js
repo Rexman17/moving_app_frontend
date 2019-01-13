@@ -17,11 +17,17 @@ class NewBoxForm extends React.Component {
     })
   }
 
+  handleSubmit = event => {
+    event.preventDefault()
+    const { userId, moveId } = this.props.match.params
+    this.props.addBox(this.state.boxName, this.state.boxCategory, userId, moveId)
+  }
+
   render() {
     console.log("NEW BOX FORM PROPS", this.props);
     return (
       <Fragment>
-        <form className="row">
+        <form onSubmit={this.handleSubmit} className="row">
           <div className="input-field col s6">
             <input onChange={this.handleChange} name="boxName" id="box_name" type="text" value={this.state.boxName} autoComplete="off" required/>
             <label htmlFor="box_name">Box Name</label>
@@ -41,12 +47,10 @@ class NewBoxForm extends React.Component {
   }
 }
 
-// const mapStateToProps = state => {
-//   console.log("STATE", state);
-// }
-
 const mapDispatchToProps = dispatch => {
-  console.log("DISPATCH", dispatch);
+  return {
+    addBox: (name, category, userId, moveId) => dispatch(addBox(name, category, userId, moveId))
+  }
 }
 
 export default withRouter(connect(null, mapDispatchToProps)(NewBoxForm));
