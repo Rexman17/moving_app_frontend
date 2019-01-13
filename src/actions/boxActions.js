@@ -9,3 +9,21 @@ export function getBoxes(userId, moveId) {
       })
   }
 }
+
+// CREATE A BOX
+export function addBox(name, category, userId, moveId) {
+  return(dispatch) => {
+    fetch(`http://localhost:3000/api/v1/users/${userId}/moves/${moveId}/boxes`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        name: name,
+        category: category
+      })
+    })
+      .then(r => r.json())
+      .then(newBox => {
+        return dispatch({type: 'ADD_BOX', payload: newBox})
+      })
+  }
+}
