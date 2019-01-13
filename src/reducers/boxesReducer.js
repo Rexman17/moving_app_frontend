@@ -10,6 +10,9 @@ const boxesReducer = (state=initialState, action) => {
     case "ADD_BOX":
       return [...state, action.payload]
 
+    case "DELETE_BOX":
+      return state.filter((box) => box.id !== action.payload)
+
     default:
       return state;
   }

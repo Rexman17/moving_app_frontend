@@ -102,7 +102,3 @@ const mapDispatchToProps = (dispatch) => {
 }
 
 export default withRouter(connect(mapStateToProps, mapDispatchToProps)(Move));
-//
-// <NavLink to="/boxes" style={{ color: 'white' }}>
-//   See Boxes
-// </NavLink>

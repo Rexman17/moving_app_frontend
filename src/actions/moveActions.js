@@ -34,7 +34,7 @@ export function addMove(name, date, userId) {
 }
 
 // Delete a Move
-// ENDPOINT: http://localhost:3000/api/v1/users/1/moves/1
+// ENDPOINT: http://localhost:3000/api/v1/users/userId/moves/moveId
 export function deleteMove(userId, moveId) {
   return(dispatch) => {
     fetch(`http://localhost:3000/api/v1/users/${userId}/moves/${moveId}`, {

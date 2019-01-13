@@ -19,8 +19,14 @@ class NewBoxForm extends React.Component {
 
   handleSubmit = event => {
     event.preventDefault()
+
     const { userId, moveId } = this.props.match.params
     this.props.addBox(this.state.boxName, this.state.boxCategory, userId, moveId)
+
+    this.setState({ // clear fields once u submit
+      boxName: '',
+      boxCategory: ''
+    })
   }
 
   render() {
