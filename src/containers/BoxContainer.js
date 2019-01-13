@@ -5,20 +5,32 @@ import MyBoxesHeader from '../components/MyBoxesHeader'
 import NewBoxForm from '../components/NewBoxForm'
 import ItemSearchBar from '../components/ItemSearchBar'
 
-const BoxContainer = props => {
-  // console.log("BoxContainer", props);
-  return (
-    <div className="container">
-      {/*<h2 className="card-panel white black-text cont-title">My Boxes</h2>*/}
-      <div className="row">
-        <MyBoxesHeader />
-        <NewBoxForm />
-        <ItemSearchBar />
-        <BoxList props={props}/>
-        <ItemsSideBar props={props}/>
+class BoxContainer extends React.Component {
+
+  state = {
+    searchTerm: ''
+  }
+
+  handleSearch = event => {
+    this.setState({ searchTerm: event.target.value })
+  }
+
+
+  render() {
+    return (
+      <div className="container">
+        {/*<h2 className="card-panel white black-text cont-title">My Boxes</h2>*/}
+        <div className="row">
+          <MyBoxesHeader />
+          <NewBoxForm />
+          <ItemSearchBar handleSearch={this.handleSearch} searchTerm={this.state.searchTerm} />
+          <BoxList props={this.props}/>
+          <ItemsSideBar props={this.props}/>
+        </div>
       </div>
-    </div>
-  )
+    )
+  }
+
 }
 
 export default BoxContainer;

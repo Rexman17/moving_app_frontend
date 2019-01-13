@@ -7,6 +7,10 @@ import { getBoxes } from '../actions/boxActions'
 
 class BoxList extends React.Component {
 
+  // state = {
+  //   searchTerm: ''
+  // }
+
   componentDidMount() {
     // destructuring
     const { moveId, userId } = this.props.match.params
@@ -29,7 +33,7 @@ class BoxList extends React.Component {
 }
 
 const mapStateToProps = state => {
-  // console.log("STATE IS", state);
+  console.log("STATE IS", state);
   return {
     move: state.move,
     boxes: state.boxes,
@@ -40,7 +44,6 @@ const mapStateToProps = state => {
 const mapDispatchToProps = dispatch => {
   return {
     getBoxes: (userId, moveId) => dispatch(getBoxes(userId, moveId))
-    // getMoveItems: (userId, moveId) => dispatch(getMoveItems(userId, moveId))
   }
 }
 

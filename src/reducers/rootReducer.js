@@ -6,6 +6,7 @@ import singleMoveReducer from './singleMoveReducer'
 import boxesReducer from './boxesReducer'
 import itemsReducer from './itemsReducer'
 import singleBoxReducer from './singleBoxReducer'
+// import searchBarReducer from './searchBarReducer'
 
 const rootReducer = combineReducers({ moves: movesReducer, user: userReducer, selectedMove: singleMoveReducer, boxes: boxesReducer, selectedBox: singleBoxReducer, moveItems: itemsReducer })
 
