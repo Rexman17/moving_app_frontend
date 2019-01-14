@@ -18,14 +18,13 @@ class ItemsContainer extends React.Component {
         let boxNum = boxes.indexOf(foundBox) + 1
 
         this.setState({ boxNum: boxNum })
-        })
-
+    })
   }
 
   render() {
     return (
       <div className="container">
-        <h2 className="card-panel white black-text cont-title">Items in Box: #{this.state.boxNum}</h2>
+        <h2 className="card-panel white black-text cont-title">Items in Box #{this.state.boxNum}</h2>
         <ItemList />
       </div>
     )

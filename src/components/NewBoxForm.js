@@ -33,6 +33,7 @@ class NewBoxForm extends React.Component {
     event.preventDefault()
 
     if (this.state.editing === false) { // CREATE MODE
+      // debugger
       const { userId, moveId } = this.props.match.params
       this.props.addBox(this.state.boxName, this.state.boxCategory, userId, moveId)
 

@@ -23,7 +23,8 @@ export function addBox(name, category, userId, moveId) {
     })
       .then(r => r.json())
       .then(newBox => {
-        return dispatch({type: 'ADD_BOX', payload: newBox})
+        // debugger
+        return dispatch({type: "ADD_BOX", payload: newBox})
       })
   }
 }
