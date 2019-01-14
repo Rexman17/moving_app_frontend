@@ -17,8 +17,8 @@ class App extends Component {
           <NavBar />
           <Switch>
             <Route exact path="/moves" component={MoveContainer} />
-            <Route path="/users/:userId/moves/:moveId/boxes" render={() => <BoxContainer/>} />
-            <Route path="/users/:userId/moves/:moveId/boxes/:boxId/items" render={() => <ItemsContainer/>} />
+            <Route exact path="/users/:userId/moves/:moveId/boxes" render={() => <BoxContainer/>} />
+            <Route exact path="/users/:userId/moves/:moveId/boxes/:boxId/items" render={() => <ItemsContainer/>} />
           </Switch>
         </div>
       </Fragment>
