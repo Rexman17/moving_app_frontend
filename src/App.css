@@ -21,12 +21,12 @@
 
 #my_boxes_header{
   font-family: 'Hammersmith One', sans-serif;
-  font-size: 40px;
-  font-style: italic;
-  color: black;
+  /* font-size: 45px; */
+  /* font-style: italic; */
+  /* color: black;
   -webkit-text-fill-color: black; /* Will override color (regardless of order) */
-  -webkit-text-stroke-width: 1px;
-  -webkit-text-stroke-color: cyan;
+  /* -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: cyan; */
 }
 
 #item_search_field {
