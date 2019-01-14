@@ -14,8 +14,13 @@ class BoxList extends React.Component {
   }
 
   render() {
-    // console.log("BoxList props", this.props)
-    const mappedBoxes = this.props.boxes.map((box, idx) => {
+    console.log("BoxList props", this.props)
+
+    const filteredBoxes = this.props.boxes.filter((box) => {
+      return this.props.itemBoxIds.includes(box.id)
+    })
+
+    const mappedBoxes = filteredBoxes.map((box, idx) => {
       return <Box box={box} key={box.id} idx={idx}/>
     })
 
@@ -25,6 +30,18 @@ class BoxList extends React.Component {
     //     return i.name.includes('e')
     //   })
     // })
+
+//     var filteredBoxes = boxesWithItems.map((box) => {
+// 	var items = filterItems(box.items)
+//
+// 	if (items.length) {
+// 		    return Object.assign({}, boxes, { items })
+//
+//    }
+// 	return false
+// }).filter(Boolean)
+//
+// console.log('filteredBoxes', filteredBoxes);
 
 
 // =================================

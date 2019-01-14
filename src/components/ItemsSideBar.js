@@ -5,23 +5,23 @@ import { withRouter } from 'react-router-dom'
 
 class ItemsSideBar extends React.Component {
 
-  componentDidMount() {
-    // destructuring
-    const { moveId, userId } = this.props.match.params
-    this.props.getMoveItems(userId, moveId)
-  }
+  // componentDidMount() {
+  //   // destructuring
+  //   const { moveId, userId } = this.props.match.params
+  //   this.props.getMoveItems(userId, moveId)
+  // }
 
   render() {
-    // console.log("ItemsSideBar PROPS", this.props);
+    console.log("ItemsSideBar PROPS", this.props);
     // const moveItems = this.props.moveItems.map((moveItem) => {
     //   return <li key={moveItem.id}>{moveItem.name} -- Box: [BOX IDX + 1]</li>
     // })
 
-    const filteredItems = this.props.moveItems.filter((item) => {
-      return item.name.toLowerCase().includes(this.props.searchTerm)
-    })
+    // const filteredItems = this.props.moveItems.filter((item) => {
+    //   return item.name.toLowerCase().includes(this.props.searchTerm)
+    // })
 
-    const moveItems = filteredItems.map((item) => {
+    const moveItems = this.props.items.map((item) => {
       return  <li className="item-li" key={item.id} style={{fontFamily: 'Josefin Sans', fontSize: '18px', color: 'black'}}>
                 {item.name} - Box: [BOX IDX + 1]
               </li>
@@ -37,19 +37,20 @@ class ItemsSideBar extends React.Component {
 
 } // end class
 
-const mapStateToProps = state => {
-  // console.log("STATE",state);
-  return {
-    move: state.move,
-    user: state.user,
-    moveItems: state.items
-  }
-}
-
-const mapDispatchToProps = dispatch => {
-  return {
-    getMoveItems: (userId, moveId) => dispatch(getMoveItems(userId, moveId))
-  }
-}
-
-export default withRouter(connect(mapStateToProps, mapDispatchToProps)(ItemsSideBar))
+// const mapStateToProps = state => {
+//   // console.log("STATE",state);
+//   console.log(state)
+//   return {
+//     move: state.move,
+//     user: state.user,
+//     moveItems: state.items
+//   }
+// }
+//
+// const mapDispatchToProps = dispatch => {
+//   return {
+//     getMoveItems: (userId, moveId) => dispatch(getMoveItems(userId, moveId))
+//   }
+// }
+//
+export default withRouter(ItemsSideBar)
