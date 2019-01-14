@@ -10,12 +10,11 @@ class ItemsSideBar extends React.Component {
 
 
     const moveItems = this.props.items.map((item) => {
-      // find idx of box it belongs to
-      // let box = this.props.boxes.find((box) => box.id === item.box_id)
-      // let index = this.props.boxes.findIndex(b => box.id == b.id);
-
+      let box = this.props.boxes.find((box) => box.id === item.box_id)
+      let idx = this.props.boxes.indexOf(box)
+      // debugger
       return  <li className="item-li" key={item.id} style={{fontFamily: 'Lato', fontSize: '22px', color: 'black'}}>
-                {item.name} - Box: idx+1
+                {item.name} - Box: {idx + 1}
               </li>
     })
 
