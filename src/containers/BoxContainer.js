@@ -34,7 +34,7 @@ class BoxContainer extends React.Component {
 
 
   render() {
-    console.log("STATE IN BOX CONTAINER", this.state);
+    // console.log("STATE IN BOX CONTAINER", this.state);
     const filteredItems = this.props.moveItems.filter((item) => {
       return item.name.toLowerCase().includes(this.state.searchTerm)
     })

@@ -24,26 +24,6 @@ class BoxList extends React.Component {
       return <Box box={box} key={box.id} idx={idx}/>
     })
 
-    // attempt to filter but it keeps returning the filtered items not the boxes!
-    // var filteredBoxes = boxes.map((box) => {
-    //   return box.items.filter((i) => {
-    //     return i.name.includes('e')
-    //   })
-    // })
-
-//     var filteredBoxes = boxesWithItems.map((box) => {
-// 	var items = filterItems(box.items)
-//
-// 	if (items.length) {
-// 		    return Object.assign({}, boxes, { items })
-//
-//    }
-// 	return false
-// }).filter(Boolean)
-//
-// console.log('filteredBoxes', filteredBoxes);
-
-
 // =================================
     return (
       <div className="col s9">
