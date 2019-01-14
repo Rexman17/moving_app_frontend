@@ -22,5 +22,10 @@ export function getMoveItems(userId, moveId) {
 export function getBoxItems(userId, moveId, boxId) {
   return(dispatch) => {
     fetch(`http://localhost:3000/api/v1/users/${userId}/moves/${moveId}/boxes/${boxId}/items`)
+      .then(r => r.json())
+      .then(boxItems => {
+        // debugger
+          return dispatch({type: 'GET_BOX_ITEMS', payload: boxItems})
+      })
   }
 }

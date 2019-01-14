@@ -42,7 +42,7 @@ const mapStateToProps = state => {
   return {
     move: state.move,
     user: state.user,
-    moveItems: state.moveItems
+    moveItems: state.items
   }
 }
 

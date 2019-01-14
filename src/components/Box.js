@@ -44,7 +44,7 @@ class Box extends React.Component {
 
   render() {
     // const { userId, moveId } = this.props.match.params
-    console.log("box", this.props.history);
+    // console.log("box", this.props.history);
     return (
       <div className="col s12 m5">
         <div className="card small box-card z-depth-5" style={{padding: '5px'}}>

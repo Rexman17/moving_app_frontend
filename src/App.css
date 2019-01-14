@@ -53,6 +53,24 @@
   /* background-position: 100%; */
 }
 
+.item-card {
+  background-image: url("/images/item-bg.jpg");
+  background-size: 100%;
+  background-repeat: no-repeat;
+  opacity: 1;
+}
+
+.item-image {
+  /* display: block;
+  max-width:400px;
+  max-height:200px;
+  width: auto;
+  height: auto; */
+ /* display: block;
+ width: 100%;
+ height: auto; */
+}
+
 /* #box-cont {
   background: url("/images/croppedBg.jpg") no-repeat center center fixed;
   -webkit-background-size: cover;
