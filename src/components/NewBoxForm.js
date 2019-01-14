@@ -56,7 +56,7 @@ class NewBoxForm extends React.Component {
   } // end handleSubmit
 
   render() {
-    console.log("NEW BOX FORM PROPS", this.props);
+    // console.log("NEW BOX FORM PROPS", this.props);
     return (
       <Fragment>
         <form onSubmit={this.handleSubmit} className="row">

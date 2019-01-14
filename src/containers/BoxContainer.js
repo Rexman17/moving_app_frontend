@@ -7,20 +7,30 @@ import ItemSearchBar from '../components/ItemSearchBar'
 import { connect } from 'react-redux';
 import { getMoveItems } from '../actions/itemActions'
 import { withRouter } from 'react-router-dom'
+import { getMoves } from '../actions/moveActions'
 
 
 class BoxContainer extends React.Component {
 
   state = {
     searchTerm: '',
-    items: []
+    items: [],
+    moves: []
   }
 
   componentDidMount() {
     // destructuring
     const { moveId, userId } = this.props.match.params
     this.props.getMoveItems(userId, moveId)
-    // this.setState({ items: this.props.moveItems })
+
+    // React fetch to get moves to pass to MyBoxesHeader
+    // fetch(`http://localhost:3000/api/v1/users/${userId}/moves`)
+    // .then(r => r.json())
+    // .then(moves => {
+    //   debugger
+    //   this.setState({ moves }, () => console.log("updated state", this.state))
+    // })
+
   }
 
   handleSearch = event => {
@@ -34,7 +44,7 @@ class BoxContainer extends React.Component {
 
 
   render() {
-    // console.log("STATE IN BOX CONTAINER", this.state);
+    // console.log("props IN BOX CONTAINER", this.props.moves);
     const filteredItems = this.props.moveItems.filter((item) => {
       return item.name.toLowerCase().includes(this.state.searchTerm)
     })
@@ -45,7 +55,7 @@ class BoxContainer extends React.Component {
       <div className="container" id="box-cont">
         {/*<h2 className="card-panel white black-text cont-title">My Boxes</h2>*/}
         <div className="row">
-          <MyBoxesHeader />
+          <MyBoxesHeader moves={this.state.moves} />
           <NewBoxForm />
           <ItemSearchBar doubleFilter={this.doubleFilter} handleSearch={this.handleSearch} searchTerm={this.state.searchTerm} />
           <BoxList itemBoxIds={itemBoxIds} searchTerm={this.state.searchTerm} props={this.props}/>
@@ -58,18 +68,19 @@ class BoxContainer extends React.Component {
 }
 
 const mapStateToProps = state => {
-  // console.log("STATE",state);
-  console.log(state)
+
   return {
-    move: state.move,
+    moves: state.moves,
     user: state.user,
     moveItems: state.items
+    // move: state.move
   }
 }
 
 const mapDispatchToProps = dispatch => {
   return {
-    getMoveItems: (userId, moveId) => dispatch(getMoveItems(userId, moveId))
+    getMoveItems: (userId, moveId) => dispatch(getMoveItems(userId, moveId)),
+    getMoves: () => dispatch(getMoves())
   }
 }
 

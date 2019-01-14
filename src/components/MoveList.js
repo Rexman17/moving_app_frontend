@@ -7,12 +7,12 @@ import { withRouter } from 'react-router-dom'
 class MoveList extends React.Component {
 
   componentDidMount() {
-    console.log("props====MoveList", this.props);
+
     this.props.getMoves(this.props.user.user_id)
   }
 
   render() {
-    // console.log("inside MoveList", this.props);
+    console.log("inside MoveList", this.props);
     const mappedMoves = this.props.moves.map((move) => {
       // debugger
       return <Move move={move} key={move.id} />

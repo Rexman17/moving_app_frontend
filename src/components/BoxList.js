@@ -14,7 +14,7 @@ class BoxList extends React.Component {
   }
 
   render() {
-    console.log("BoxList props", this.props)
+    // console.log("BoxList props", this.props)
 
     const filteredBoxes = this.props.boxes.filter((box) => {
       return this.props.itemBoxIds.includes(box.id)
