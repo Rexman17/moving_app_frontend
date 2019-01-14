@@ -45,19 +45,25 @@ class BoxContainer extends React.Component {
 
   filterBoxes = () => { // if this find doesnt find anything we still have to pass down an array
     // return this.props.boxes.find(b => b.items.find(i => i.name.includes(this.state.searchTerm))) || []
-    return this.props.boxes.filter(b => b.items.find(i => i.name.includes(this.state.searchTerm)))
+    return this.props.boxes.filter(b => b.items.find(i => i.name.match(new RegExp(this.state.searchTerm, 'i'))))
   }
 
+  filterItems = () => {
+    return this.props.moveItems.filter((item) => {
+      return item.name.match(new RegExp(this.state.searchTerm, 'i')) // regex case insensitive /i .match/i
+    })
+  }
 
   render() {
     // console.log("props IN BOX CONTAINER", this.props.moves);
-    const filteredItems = this.props.moveItems.filter((item) => {
-      return item.name.includes(this.state.searchTerm) // regex case insensitive /i .match/i
-    })
+    // const filteredItems = this.props.moveItems.filter((item) => {
+    //   return item.name.match(/this.state.searchTerm/i) // regex case insensitive /i .match/i
+    // })
 
     // const itemBoxIds = this.state.searchTerm ? this.state.items.map((i) => i.box_id) : this.props.moveItems.map((i) => i.box_id)
     const boxes = this.state.searchTerm ? this.filterBoxes() : this.props.boxes
-    console.log('%c ITEMS ', "color: red", filteredItems);
+    const items = this.state.searchTerm ? this.filterItems() : this.props.moveItems
+    console.log('%c ITEMS ', "color: red", items);
 
     return (
       <div className="container" id="box-cont">
@@ -67,7 +73,7 @@ class BoxContainer extends React.Component {
           <NewBoxForm />
           <ItemSearchBar doubleFilter={this.doubleFilter} handleSearch={this.handleSearch} searchTerm={this.state.searchTerm} />
           <BoxList boxes={boxes} />
-          <ItemsSideBar items={filteredItems} searchTerm={this.state.searchTerm} />
+          <ItemsSideBar items={items} searchTerm={this.state.searchTerm} />
         </div>
       </div>
     )
