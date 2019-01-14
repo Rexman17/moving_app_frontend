@@ -7,6 +7,9 @@ const itemsReducer = (state=initialState, action) => {
       // console.log("===========payload", action.payload, action)
       return [...action.payload]
 
+    case "GET_BOX_ITEMS":
+      return [...action.payload]
+
     default:
       return state;
   }

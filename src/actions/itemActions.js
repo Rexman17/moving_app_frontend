@@ -15,3 +15,12 @@ export function getMoveItems(userId, moveId) {
       })
   }
 }
+
+
+// get items for a SPECIFIC BOX
+// http://localhost:3000/api/v1/users/1/moves/1/boxes/2/items
+export function getBoxItems(userId, moveId, boxId) {
+  return(dispatch) => {
+    fetch(`http://localhost:3000/api/v1/users/${userId}/moves/${moveId}/boxes/${boxId}/items`)
+  }
+}
