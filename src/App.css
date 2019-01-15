@@ -4,14 +4,15 @@
   align-content: center;
 }
 
-/* #login-parent {
+#login-parent {
   position: relative;
-  align-content: center;
+  left: 450px;
+  top: 200px;
 }
 
-#form-login {
+/* #form-login {
   align-content: center;
-} */
+}  */
 
 /* .card-content {
     color: white;
