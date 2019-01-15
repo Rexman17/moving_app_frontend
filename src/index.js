@@ -13,6 +13,8 @@ import {BrowserRouter as Router} from 'react-router-dom'
 // Create the Redux store:
 const store = createStore(rootReducer, composeWithDevTools(applyMiddleware(thunk)))
 
+console.log(`%c INITIAL REDUX STORE`, 'color: purple', store.getState())
+
 ReactDOM.render(
   <Provider store={store}>
     <Router>
