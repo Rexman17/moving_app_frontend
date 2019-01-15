@@ -7,6 +7,7 @@ const initialState = {
 const singleBoxReducer = (state=initialState, action) => {
 
   switch (action.type) {
+
     case "SELECT_BOX":
       return {...state, ...action.payload}
 

@@ -1,7 +1,7 @@
 import React from 'react';
 import { withRouter } from 'react-router-dom'
 import { connect } from 'react-redux';
-import { deleteBox, selectBox, prefillForm } from '../actions/boxActions'
+import { deleteBox, selectBox } from '../actions/boxActions'
 
 class Box extends React.Component {
 
@@ -33,7 +33,7 @@ class Box extends React.Component {
 
   handleClickToEdit = () => {
     this.props.selectBox(this.props.box)
-    this.props.prefillForm(this.props.box)
+    // this.props.prefillForm(this.props.box)
   }
 
   handleClickToSeeItems = () => {
@@ -77,8 +77,8 @@ class Box extends React.Component {
 const mapDispatchToProps = dispatch => {
   return {
     deleteBox: (userId, moveId, boxId) => dispatch(deleteBox(userId, moveId, boxId)),
-    selectBox: (box) => dispatch(selectBox(box)),
-    prefillForm: (box) => dispatch(prefillForm(box))
+    selectBox: (box) => dispatch(selectBox(box))
+    // prefillForm: (box) => dispatch(prefillForm(box))
   }
 }
 

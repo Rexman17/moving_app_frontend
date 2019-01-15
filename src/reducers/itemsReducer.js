@@ -14,6 +14,19 @@ const itemsReducer = (state=initialState, action) => {
     // debugger
       return [...state, action.payload]
 
+    case "DELETE_ITEM":
+      return state.filter((item) => item.id !== action.payload)
+
+    // case "EDIT_ITEM":
+    // return state.map((item) => {
+    //
+    //   if (item.id === action.payload.id) {
+    //     // debugger
+    //     return action.payload
+    //   } else {
+    //     return item;
+    //   }
+    // })
 
     default:
       return state;

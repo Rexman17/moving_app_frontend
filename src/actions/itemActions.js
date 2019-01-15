@@ -44,8 +44,46 @@ export function addItem(name, image, userId, moveId, boxId) {
     })
     .then(r => r.json())
     .then(newItem => {
-      // debugger
+      debugger
       return dispatch({ type: "ADD_ITEM", payload: newItem })
     })
   }
 }
+
+// DELETE ITEM
+export function deleteItem(userId, moveId, boxId, itemId) {
+  return(dispatch) => {
+    fetch(`http://localhost:3000/api/v1/users/${userId}/moves/${moveId}/boxes/${boxId}/items/${itemId}`, {
+      method: 'DELETE'
+    })
+    return dispatch({ type: 'DELETE_ITEM', payload: itemId })
+  }
+}
+
+// SELECT ITEM TO EDIT
+// export function selectItem(item) {
+//   debugger
+//   return {
+//     type: 'SELECT_ITEM',
+//     payload: item
+//   }
+// }
+
+// EDIT ITEM
+// export function editItem(name, image, userId, moveId, boxId, itemId) {
+//   return(dispatch) => {
+//     fetch(`http://localhost:3000/api/v1/users/${userId}/moves/${moveId}/boxes/${boxId}/items/${itemId}`, {
+//       method: 'PATCH',
+//       headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+//       body: JSON.stringify({
+//         name: name,
+//         image: image
+//       })
+//     })
+//     .then(r => r.json())
+//     .then(editedItem => {
+//       debugger
+//       return dispatch({ type: "EDIT_ITEM", payload: editedItem })
+//     })
+//   }
+// }

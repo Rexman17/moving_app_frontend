@@ -49,11 +49,11 @@ export function selectBox(box) {
 }
 
 // PREFILL EDIT FORM:
-export function prefillForm(box) {
-  return {
-    type: "PREFILL_FORM"
-  }
-}
+// export function prefillForm(box) {
+//   return {
+//     type: "PREFILL_FORM"
+//   }
+// }
 
 // PATCH REQUEST / EDIT BOX
 // `http://localhost:3000/api/v1/users/${userId}/moves/${moveId}/boxes/${boxId}`

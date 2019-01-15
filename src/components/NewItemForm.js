@@ -7,8 +7,21 @@ class NewItemForm extends React.Component {
   // create a controlled form;
   state = {
     name: '',
-    image: ''
+    image: '',
+    // editing: false
   }
+
+  // Triggers the form to prefill when u click edit btn, updating local state values
+  // componentDidUpdate(prevProps) {
+  //   if (this.props.selectedItem !== prevProps.selectedItem) {
+  //     this.setState({
+  //       name: this.props.selectedItem.name,
+  //       image: this.props.selectedItem.image,
+  //       editing: !this.state.editing
+  //     }, () => console.log("%c componentDidUpdate", 'color: red', this.state))
+  //   }
+  // }
+
 
   handleChange = (event) => {
     // console.log(event.target.value);
@@ -19,12 +32,25 @@ class NewItemForm extends React.Component {
 
   handleSubmit = event => {
     event.preventDefault()
-
     const { userId, moveId, boxId } = this.props.match.params
 
-    this.props.addItem(this.state.name, this.state.image, userId, moveId, boxId)
+    // if (this.state.editing === false) {
 
-    this.setState({ name: '', image: '' }) // reset form fields
+      this.props.addItem(this.state.name, this.state.image, userId, moveId, boxId)
+
+      this.setState({ name: '', image: '' }) // reset form fields
+
+    // }
+    // else if (this.state.editing === true) {
+    //
+    //   this.props.editItem(this.state.name, this.state.image, userId, moveId, boxId, this.props.selectedItem.id)
+    //
+    //   this.setState({
+    //     name: '',
+    //     image: '',
+    //     editing: false
+    //   })
+    // }
   }
 
 
@@ -50,9 +76,17 @@ class NewItemForm extends React.Component {
   }
 }
 
+// const mapStateToProps = state => {
+//   return {
+//     selectedItem: state.selectedItem
+//   }
+// }
+
+
 const mapDispatchToProps = dispatch => {
   return {
-    addItem: (name, image, userId, moveId, boxId) => dispatch(addItem(name, image, userId, moveId, boxId))
+    addItem: (name, image, userId, moveId, boxId) => dispatch(addItem(name, image, userId, moveId, boxId)),
+    // editItem: (name, image, userId, moveId, itemId) => dispatch(editItem(name, image, userId, moveId, itemId))
   }
 }
 
