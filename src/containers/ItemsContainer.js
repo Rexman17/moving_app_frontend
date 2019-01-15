@@ -1,6 +1,7 @@
 import React from 'react';
 import {withRouter} from 'react-router-dom'
 import ItemList from '../components/ItemList'
+import NewItemForm from '../components/NewItemForm'
 
 class ItemsContainer extends React.Component {
   state = {
@@ -25,6 +26,7 @@ class ItemsContainer extends React.Component {
     return (
       <div className="container">
         <h2 className="card-panel white black-text cont-title">Items in Box #{this.state.boxNum}</h2>
+        <NewItemForm />
         <ItemList />
       </div>
     )
