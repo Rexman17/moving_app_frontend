@@ -7,6 +7,7 @@ import BoxContainer from './containers/BoxContainer'
 import ItemsContainer from './containers/ItemsContainer'
 import NavBar from './components/NavBar'
 import { Route, Switch } from 'react-router-dom'
+import LoginForm from './components/LoginForm'
 
 
 class App extends Component {
@@ -17,6 +18,7 @@ class App extends Component {
           <NavBar />
           <Switch>
             {/*<Route exact path="/moves" component={MoveContainer} />*/}
+            <Route exact path="/login" component={LoginForm} />
             <Route exact path = "/users/:userId/moves" render={() => <MoveContainer />} />
             <Route exact path="/users/:userId/moves/:moveId/boxes" render={() => <BoxContainer/>} />
             <Route exact path="/users/:userId/moves/:moveId/boxes/:boxId/items" render={() => <ItemsContainer/>} />
