@@ -9,8 +9,8 @@ class ItemsSideBar extends React.Component {
     // console.log("ItemsSideBar PROPS", this.props);
 
     const moveItems = this.props.items.map((item) => {
-      let box = this.props.boxes.find((box) => box.id === item.box_id)
-      let idx = this.props.boxes.indexOf(box)
+      // let box = this.props.boxes.find((box) => box.id === item.box_id)
+      // let idx = this.props.boxes.indexOf(box)
       // debugger
       return  <li className="item-li" key={item.id} style={{fontFamily: 'Hammersmith One, sans-serif', fontSize: '22px', color: 'black', marginBottom: '15px'}}>
                 {item.name}
