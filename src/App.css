@@ -63,22 +63,23 @@
   /* background-position: 100%; */
 }
 
-.item-card {
-  background-image: url("/images/item-bg.jpg");
+/* .item-card {
+  background-image: url("/images/marble.jpg");
   background-size: 100%;
   background-repeat: no-repeat;
   opacity: 1;
-}
+  background-position: 100%; */
+/* } */
 
 .item-image {
-  /* display: block;
+  display: block;
   max-width:400px;
   max-height:200px;
   width: auto;
   height: auto; */
- /* display: block;
+ display: block;
  width: 100%;
- height: auto; */
+ height: auto;
 }
 
 /* #box-cont {
