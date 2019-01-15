@@ -12,8 +12,9 @@ class ItemsSideBar extends React.Component {
       let box = this.props.boxes.find((box) => box.id === item.box_id)
       let idx = this.props.boxes.indexOf(box)
       // debugger
-      return  <li className="item-li" key={item.id} style={{fontFamily: 'Lato', fontSize: '22px', color: 'black', margin: '5px'}}>
-                {item.name}: <span style={{fontWeight: 'bold'}}>Box #{idx + 1}</span>
+      return  <li className="item-li" key={item.id} style={{fontFamily: 'Hammersmith One, sans-serif', fontSize: '22px', color: 'black', marginBottom: '15px'}}>
+                {item.name}
+                : <span style={{fontStyle: 'light'}}>Box #{idx + 1}</span>
               </li>
     })
 

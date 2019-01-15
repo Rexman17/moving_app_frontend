@@ -34,13 +34,13 @@ class NewItemForm extends React.Component {
       <Fragment>
         <form onSubmit={this.handleSubmit} className="row">
           <div className="input-field col s6">
-            <input onChange={this.handleChange} placeholder="Item Name/Description..." name="name" id="item_name" type="text" value={this.state.itemName} autoComplete="off" required/>
+            <input onChange={this.handleChange} placeholder="Item Name/Description..." name="name" id="item_name" type="text" value={this.state.name} autoComplete="off" required/>
           </div>
           <div className="input-field col s6">
-            <input onChange={this.handleChange} placeholder="Image Url..." name="image" id="item_image" type="text" value={this.state.itemImg} autoComplete="off" required/>
+            <input onChange={this.handleChange} placeholder="Image Url..." name="image" id="item_image" type="text" value={this.state.image} autoComplete="off" required/>
             <div className="submit-btn">
-              <button type="submit" className="addOrEditMoveBtn col s2 btn-small cyan lighten-2" style={{fontFamily: 'Hammersmith One', fontSize: '15px'}}>
-                add
+              <button type="submit" className="addOrEditMoveBtn col s2 btn-small red accent-3" style={{fontFamily: 'Hammersmith One', fontSize: '15px'}}>
+                add item
               </button>
             </div>
           </div>

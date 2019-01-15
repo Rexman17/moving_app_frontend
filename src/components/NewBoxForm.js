@@ -68,7 +68,7 @@ class NewBoxForm extends React.Component {
             <input onChange={this.handleChange} placeholder="Room, i.e., where does this stuff belong?" name="boxCategory" id="box_category" type="text" value={this.state.boxCategory} autoComplete="off" required/>
             <div className="submit-btn">
               <button type="submit" className="addOrEditMoveBtn col s2 btn-small cyan lighten-2" style={{fontFamily: 'Hammersmith One', fontSize: '15px'}}>
-                {this.state.editing ? "Submit" : "Add"}
+                {this.state.editing ? "Submit" : "Add Box"}
               </button>
             </div>
           </div>
