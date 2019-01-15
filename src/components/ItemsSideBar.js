@@ -14,7 +14,7 @@ class ItemsSideBar extends React.Component {
       // debugger
       return  <li className="item-li" key={item.id} style={{fontFamily: 'Hammersmith One, sans-serif', fontSize: '22px', color: 'black', marginBottom: '15px'}}>
                 {item.name}
-                : <span style={{fontStyle: 'light'}}>Box #{idx + 1}</span>
+                {/*: <span style={{fontStyle: 'light'}}>Box #{idx + 1}</span>*/}
               </li>
     })
 

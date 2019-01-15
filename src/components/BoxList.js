@@ -6,10 +6,10 @@ import { getBoxes } from '../actions/boxActions'
 // import { getMoveItems } from '../actions/itemActions'
 
 const BoxList = (props) => {
+  console.log("BoxList", props);
 
-
-  const boxCards = props.boxes.map((box, idx) => {
-    return <Box box={box} key={box.id} idx={idx}/>
+  const boxCards = props.boxes.map((box) => {
+    return <Box box={box} key={box.id} idx={box.idx} />
   })
 
 // =================================

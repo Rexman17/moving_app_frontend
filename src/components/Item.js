@@ -25,14 +25,14 @@ class Item extends React.Component {
             {name}
           </span>
           <div className="card-image" style={{width: 'auto', textAlign: 'center', marginRight: '1%', marginTop: '10%'}}>
-            <img src={image} className="item-image" alt="item-img" />
+            {image ? <img src={image} className="item-image" alt="item-img" /> : null}  
           </div>
           <div style={{align: 'center'}}>
           {/*  <button onClick={this.handleClickToEdit} className="small-actions edit-move-btn btn-floating btn-small waves-effect deep-orange accent-3">
               <span style={{fontFamily: 'Hammersmith One'}}><i className="material-icons">edit</i></span>
             </button> */}
-            <button onClick={this.handleDelete} className="small-actions delete-move-btn btn-floating btn-small waves-effect red accent-3" style={{marginTop: '10px'}}>
-              <span style={{fontFamily: 'Hammersmith One'}}>X</span>
+            <button onClick={this.handleDelete} className="delete-move-btn btn-small waves-effect red accent-3" style={{marginTop: '10px'}}>
+              <span style={{fontFamily: 'Hammersmith One'}}>Leave me behind :(</span>
             </button>
           </div>
         </div>

@@ -8,19 +8,21 @@ class Box extends React.Component {
   constructor(props) {
     super(props)
 
-    const { name, category } = this.props.box // destructuring
+    const { name, category, idx } = this.props.box // destructuring
 
     this.state = {
       name: name,
-      category: category
+      category: category,
+      idx: idx
     }
   }
 
   static getDerivedStateFromProps(props, state) {
-    if (props.box.name !== state.name || props.box.category !== state.category) {
+    if (props.box.name !== state.name || props.box.category !== state.category || props.box.idx !== state.idx) {
       return ({
         name: props.box.name,
-        category: props.box.category
+        category: props.box.category,
+        idx: props.box.idx
       })
     }
     return null;
@@ -44,16 +46,20 @@ class Box extends React.Component {
 
   render() {
     // const { userId, moveId } = this.props.match.params
-    // console.log("box", this.props.history);
+    console.log("box", this.props);
     return (
       <div className="col s12 m5">
         <div className="card small box-card z-depth-5" style={{padding: '5px'}}>
-          <p style={{fontSize: '20px'}}>Box #{this.props.idx + 1}</p>
+        { /* <p style={{fontSize: '20px'}}>Box #{this.state.idx + 1}</p> */}
         <span className="card-title">
-          "{this.state.name}"
+          <div style={{marginTop: '20px'}}>
+            "{this.state.name.toUpperCase()}"
+          </div>
         </span>
-        <p>Room: {this.state.category}</p>
-        <div style={{position: 'relative'}}>
+        <div style={{marginTop: '30px'}}>
+          <h5>Room: {this.state.category}</h5>
+        </div>
+        <div style={{position: 'relative', marginTop: '40px'}}>
           <div className="see-items-btn">
             <button onClick={this.handleClickToSeeItems} className="see-items-btn-text waves-effect cyan lighten-2 btn-small">
               See Items

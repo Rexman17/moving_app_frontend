@@ -61,9 +61,14 @@ class BoxContainer extends React.Component {
     // })
 
     // const itemBoxIds = this.state.searchTerm ? this.state.items.map((i) => i.box_id) : this.props.moveItems.map((i) => i.box_id)
-    const boxes = this.state.searchTerm ? this.filterBoxes() : this.props.boxes
+    let boxes = this.state.searchTerm ? this.filterBoxes() : this.props.boxes
     const items = this.state.searchTerm ? this.filterItems() : this.props.moveItems
     console.log('%c ITEMS ', "color: red", items);
+
+    // map over boxes to add idx key:
+    boxes = boxes.map((b) => {
+      return {...b, idx: boxes.indexOf(b)}
+    })
 
     return (
       <div className="container" id="box-cont">
