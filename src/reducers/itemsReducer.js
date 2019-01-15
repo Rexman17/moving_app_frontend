@@ -10,6 +10,11 @@ const itemsReducer = (state=initialState, action) => {
     case "GET_BOX_ITEMS":
       return [...action.payload]
 
+    case "ADD_ITEM":
+    // debugger
+      return [...state, action.payload]
+
+
     default:
       return state;
   }

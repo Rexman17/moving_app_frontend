@@ -14,7 +14,7 @@ class Item extends React.Component {
             {name}
           </span>
           <div className="card-image" style={{width: 'auto', textAlign: 'center', marginRight: '1%', marginTop: '10%'}}>
-            <img className="item-image" src={image} alt="item-img" />
+            <img src={image} className="item-image" alt="item-img" />
           </div>
         </div>
       </div>

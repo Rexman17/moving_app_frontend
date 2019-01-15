@@ -29,3 +29,23 @@ export function getBoxItems(userId, moveId, boxId) {
       })
   }
 }
+
+
+// CREATE an item, POSTing
+export function addItem(name, image, userId, moveId, boxId) {
+  return(dispatch) => {
+    fetch(`http://localhost:3000/api/v1/users/${userId}/moves/${moveId}/boxes/${boxId}/items`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        name: name,
+        image: image
+      })
+    })
+    .then(r => r.json())
+    .then(newItem => {
+      // debugger
+      return dispatch({ type: "ADD_ITEM", payload: newItem })
+    })
+  }
+}
