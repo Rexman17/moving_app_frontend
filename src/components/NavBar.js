@@ -2,6 +2,7 @@ import React from 'react';
 // import { NavLink } from 'react-router-dom'
 import { withRouter } from 'react-router-dom'
 import { connect } from 'react-redux';
+import { logoutUser } from '../actions/userActions'
 
 class NavBar extends React.Component {
 
@@ -10,7 +11,9 @@ class NavBar extends React.Component {
   }
 
   handleLogout = () => {
-    
+    this.props.logoutUser()
+    localStorage.clear()
+    this.props.history.push("/login")
   }
 
   render() {
@@ -45,8 +48,15 @@ class NavBar extends React.Component {
 const mapStateToProps = state => {
   return {
     user: state.user.user,
-    loggedIn: state.user.loggedIn
+    loggedIn: state.user.loggedIn,
   }
 }
 
-export default withRouter(connect(mapStateToProps)(NavBar));
+const mapDispatchToProps = dispatch => {
+  return {
+    logoutUser: () => dispatch(logoutUser())
+  }
+}
+
+
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(NavBar));

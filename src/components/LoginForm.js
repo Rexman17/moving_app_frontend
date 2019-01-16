@@ -37,12 +37,11 @@ class LoginForm extends React.Component {
         <div style={{marginTop: '10%'}} className="row">
           <form  onSubmit={this.handleLoginSubmit} error={this.props.failedLogin} className="col s12 m4 offset-m4">
             <div className="card">
-              { this.props.failedLogin ? this.props.error : null }
               <div className="card-action cyan lighten-2 white-text">
                 <h3>Login Form</h3>
               </div>
-
               <div className="card-content">
+              { this.props.error ? this.props.error : null }
                 <div className="form-field">
                   <input onChange={this.handleChange} type='text' name="username" placeholder="Username" value={this.state.username} required autoComplete="off" />
                 </div><br />
