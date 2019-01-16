@@ -32,9 +32,9 @@ class NavBar extends React.Component {
            <button className="nav-btn col s2 btn-small cyan lighten-2" style={{fontFamily: 'Hammersmith One', fontSize: '15px'}}>
              Log Out
            </button>
-            <button onClick={this.handleClick} className="col s2 btn-small cyan lighten-2" style={{fontFamily: 'Hammersmith One', fontSize: '15px'}}>
+          {this.props.loggedIn ? <button onClick={this.handleClick} className="col s2 btn-small cyan lighten-2" style={{fontFamily: 'Hammersmith One', fontSize: '15px'}}>
               Moves
-            </button>
+            </button> : null}
           </li>
          </ul>
          <div style={{color: 'black'}}>LOGO??
@@ -49,7 +49,8 @@ class NavBar extends React.Component {
 
 const mapStateToProps = state => {
   return {
-    user: state.user.user
+    user: state.user.user,
+    loggedIn: state.user.loggedIn
   }
 }
 
