@@ -11,7 +11,13 @@ class ItemsContainer extends React.Component {
   componentDidMount() {
     const { userId, moveId } = this.props.match.params
 
-    fetch(`http://localhost:3000/api/v1/users/${userId}/moves/${moveId}/boxes`)
+    fetch(`http://localhost:3000/api/v1/users/${userId}/moves/${moveId}/boxes`, {
+      method: "GET",
+      headers: {
+        'Content-Type': 'application/json',
+         Authorization: `Bearer ${localStorage.getItem('jwt')}`
+     }
+    })
       .then(r => r.json())
       .then(boxes => {
         let boxIdInt = parseInt(this.props.match.params.boxId)

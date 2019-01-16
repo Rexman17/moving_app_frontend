@@ -55,7 +55,7 @@ class NewMoveForm extends React.Component {
 
 
   render() {
-    // console.log("%c move form props", 'color: pink', this.props);
+    console.log("%c move form props", 'color: pink', this.props.userId);
     return (
       <Fragment>
         <form onSubmit={this.handleSubmit} className="row new-move-form">
@@ -78,9 +78,9 @@ class NewMoveForm extends React.Component {
 
 
 function mapStateToProps(state) {
-  // console.log("state in NewMoveForm", state);
+  console.log("state in NewMoveForm", state);
   return {
-    userId: state.user.user_id,
+    userId: state.user.user.id,
     selectedMove: state.selectedMove
   }
 }

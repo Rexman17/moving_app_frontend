@@ -4,7 +4,7 @@ const boxesReducer = (state=initialState, action) => {
 
   switch (action.type) {
     case "GET_BOXES":
-    debugger
+    
       console.log("===========payload", action.payload)
       return [...action.payload]
 

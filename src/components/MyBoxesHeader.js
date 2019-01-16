@@ -22,7 +22,7 @@ class MyBoxesHeader extends React.Component {
     })
       .then(r => r.json())
       .then(moves => {
-        debugger
+        // debugger
         let moveIdInt = parseInt(this.props.match.params.moveId)
         let foundMove = moves.find((m) => m.id === moveIdInt)
         let name = foundMove.name
