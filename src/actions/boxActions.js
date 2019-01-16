@@ -1,7 +1,10 @@
 // GET BOXES FOR SPECIFIC MOVE
 export function getBoxes(userId, moveId) {
   return(dispatch) => {
-    fetch(`http://localhost:3000/api/v1/users/${userId}/moves/${moveId}/boxes`)
+    fetch(`http://localhost:3000/api/v1/users/${userId}/moves/${moveId}/boxes`, {
+      method: 'GET',
+      headers: { Accept: 'application/json', Authorization: `Bearer ${localStorage.getItem('jwt')}` }
+    })
       .then(r => r.json())
       .then(boxes => {
         // debugger
@@ -15,7 +18,7 @@ export function addBox(name, category, userId, moveId) {
   return(dispatch) => {
     fetch(`http://localhost:3000/api/v1/users/${userId}/moves/${moveId}/boxes`, {
       method: 'POST',
-      headers: { 'Content-Type': 'application/json', Authorization: `Bearer ${localStorage['Authorization']}` },
+      headers: { 'Content-Type': 'application/json', Authorization: `Bearer ${localStorage.getItem('jwt')}` },
       body: JSON.stringify({
         name: name,
         category: category
@@ -61,7 +64,7 @@ export function editBox(name, category, userId, moveId, boxId) {
   return(dispatch) => {
     fetch(`http://localhost:3000/api/v1/users/${userId}/moves/${moveId}/boxes/${boxId}`, {
       method: 'PATCH',
-      headers: { 'Content-Type': 'application/json', Accept: 'application/json', Authorization: `Bearer ${localStorage['Authorization']}` },
+      headers: { 'Content-Type': 'application/json', Accept: 'application/json', Authorization: `Bearer ${localStorage.getItem('jwt')}` },
       body: JSON.stringify({
         name: name,
         category: category

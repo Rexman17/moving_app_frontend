@@ -13,10 +13,16 @@ class MyBoxesHeader extends React.Component {
   componentDidMount() {
     const { userId } = this.props.match.params
 
-    fetch(`http://localhost:3000/api/v1/users/${userId}/moves`)
+    fetch(`http://localhost:3000/api/v1/users/${userId}/moves`, {
+      method: "GET",
+      headers: {
+        'Content-Type': 'application/json',
+         Authorization: `Bearer ${localStorage.getItem('jwt')}`
+     },
+    })
       .then(r => r.json())
       .then(moves => {
-        // debugger
+        debugger
         let moveIdInt = parseInt(this.props.match.params.moveId)
         let foundMove = moves.find((m) => m.id === moveIdInt)
         let name = foundMove.name

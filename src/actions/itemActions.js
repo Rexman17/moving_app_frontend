@@ -4,7 +4,10 @@
 // NOT just all of a user's items, this is all of a user's items INSIDE A SPECIFIC MOVE
 export function getMoveItems(userId, moveId) {
   return(dispatch) => {
-    fetch(`http://localhost:3000/api/v1/users/${userId}/moves/${moveId}/boxes`)
+    fetch(`http://localhost:3000/api/v1/users/${userId}/moves/${moveId}/boxes`, {
+      method: 'GET',
+      headers: { Accept: 'application/json', Authorization: `Bearer ${localStorage.getItem('jwt')}` },
+    })
       .then(r => r.json())
       .then(boxesWithItems => {
         // debugger
@@ -21,7 +24,10 @@ export function getMoveItems(userId, moveId) {
 // http://localhost:3000/api/v1/users/1/moves/1/boxes/2/items
 export function getBoxItems(userId, moveId, boxId) {
   return(dispatch) => {
-    fetch(`http://localhost:3000/api/v1/users/${userId}/moves/${moveId}/boxes/${boxId}/items`)
+    fetch(`http://localhost:3000/api/v1/users/${userId}/moves/${moveId}/boxes/${boxId}/items`, {
+      method: 'GET',
+      headers: { Accept: 'application/json', Authorization: `Bearer ${localStorage.getItem('jwt')}` },
+    })
       .then(r => r.json())
       .then(boxItems => {
         // debugger
@@ -36,7 +42,7 @@ export function addItem(name, image, userId, moveId, boxId) {
   return(dispatch) => {
     fetch(`http://localhost:3000/api/v1/users/${userId}/moves/${moveId}/boxes/${boxId}/items`, {
       method: 'POST',
-      headers: { 'Content-Type': 'application/json', Authorization: `Bearer ${localStorage['Authorization']}` },
+      headers: { 'Content-Type': 'application/json', Authorization: `Bearer ${localStorage.getItem('jwt')}` },
       body: JSON.stringify({
         name: name,
         image: image
