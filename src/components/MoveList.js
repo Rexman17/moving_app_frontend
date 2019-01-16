@@ -4,12 +4,11 @@ import { getMoves } from '../actions/moveActions'
 import Move from './Move'
 import { withRouter } from 'react-router-dom'
 
-
 class MoveList extends React.Component {
 
   componentDidMount() {
-
-    this.props.getMoves(this.props.user.user_id)
+    // debugger
+    this.props.getMoves(this.props.user.id)
   }
 
   render() {
@@ -30,16 +29,16 @@ class MoveList extends React.Component {
 // CONNECT TO REDUX STORE:
 // Retrieve the data from within the Redux Store:
 const mapStateToProps = (state) => {
-  // console.log("props in movelist", state);
+  console.log("props in movelist", state);
   return {
     moves: state.moves,
-    user: state.user
+    user: state.user.user
   }
 }
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    getMoves: () => dispatch(getMoves())
+    getMoves: (id) => dispatch(getMoves(id))
   }
 }
 

@@ -28,8 +28,9 @@ class LoginForm extends React.Component {
 
 
   render() {
+    console.log("LoginForm", this.props);
     return this.props.loggedIn ? (
-      <Redirect to="/users/:userId/moves" />
+      <Redirect to={"/users/" + this.props.user.user.id + "/moves"}/>
       ) : (
       <Fragment>
         <div style={{marginTop: '10%'}} className="row">
@@ -71,7 +72,8 @@ const mapStateToProps = (state) => {
     authenticatingUser: state.user.authenticatingUser,
     failedLogin: state.user.failedLogin,
     error: state.user.error,
-    loggedIn: state.user.loggedIn
+    loggedIn: state.user.loggedIn,
+    user: state.user
   }
 }
 

@@ -2,6 +2,7 @@
 
 // GET MOVES
 export function getMoves(id) {
+  // debugger
   return(dispatch) => {
     fetch(`http://localhost:3000/api/v1/users/${id}/moves`)
       .then(r => r.json())
