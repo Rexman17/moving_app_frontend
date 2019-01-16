@@ -5,21 +5,21 @@ import { connect } from 'react-redux';
 
 class NavBar extends React.Component {
 
-  state = {
-    userId: null
-  }
-  //
-  componentDidMount() {
-    this.setState({
-      userId: this.props.userId
-    })
-  }
+  // state = {
+  //   userId: null
+  // }
+  // //
+  // componentDidMount() {
+  //   this.setState({
+  //     userId: this.props.user.id
+  //   })
+  // }
   // console.log("NAVBAR",props);
   handleClick = () => {
     // this.props.history.clear()
     // this.props.history.replace('/moves')
 
-    this.props.history.push(`/users/${this.props.userId}/moves`)
+    this.props.history.push(`/users/${this.props.user.id}/moves`)
   }
 
   render() {
@@ -38,7 +38,7 @@ class NavBar extends React.Component {
           </li>
          </ul>
          <div style={{color: 'black'}}>LOGO??
-          
+
          </div>
        </div>
       </nav>
@@ -49,7 +49,7 @@ class NavBar extends React.Component {
 
 const mapStateToProps = state => {
   return {
-    userId: state.user.user_id
+    user: state.user.user
   }
 }
 

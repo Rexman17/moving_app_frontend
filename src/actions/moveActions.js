@@ -45,7 +45,8 @@ export function addMove(name, date, userId) {
 export function deleteMove(userId, moveId) {
   return(dispatch) => {
     fetch(`http://localhost:3000/api/v1/users/${userId}/moves/${moveId}`, {
-      method: 'DELETE'
+      method: 'DELETE',
+      headers: {  Authorization: `Bearer ${localStorage.getItem('jwt')}` }
     })
       return dispatch({type: 'DELETE_MOVE', payload: moveId})
   }

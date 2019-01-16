@@ -37,7 +37,8 @@ export function addBox(name, category, userId, moveId) {
 export function deleteBox(userId, moveId, boxId) {
   return(dispatch) => {
     fetch(`http://localhost:3000/api/v1/users/${userId}/moves/${moveId}/boxes/${boxId}`, {
-      method: 'DELETE'
+      method: 'DELETE',
+      headers: {  Authorization: `Bearer ${localStorage.getItem('jwt')}` }
     })
       return dispatch({type: 'DELETE_BOX', payload: boxId})
   }
