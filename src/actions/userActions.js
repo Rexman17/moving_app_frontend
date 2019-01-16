@@ -29,6 +29,7 @@ export const /*FUNCTION*/ loginUser = (username, password) => {
         }
       })
       .then(JSONResponse => {
+        // debugger
         console.log('%c INSIDE YE OLDE .THEN', 'color: navy')
         localStorage.setItem('jwt', JSONResponse.jwt)
         dispatch({ type: 'SET_CURRENT_USER', payload: JSONResponse.user })

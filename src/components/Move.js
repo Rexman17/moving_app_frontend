@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import { deleteMove, selectMove, prefillForm } from '../actions/moveActions'
 import { withRouter } from 'react-router-dom'
 
+
 class Move extends React.Component {
   constructor(props) {
     super(props)

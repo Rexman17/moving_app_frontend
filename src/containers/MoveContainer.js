@@ -2,7 +2,7 @@ import React from 'react';
 import MoveList from '../components/MoveList'
 import NewMoveForm from '../components/NewMoveForm'
 import { withRouter } from 'react-router-dom'
-import withAuth from '../HOCs/withAuth'
+
 // purely presentational component
 const MoveContainer = (props) => {
 
@@ -19,4 +19,4 @@ const MoveContainer = (props) => {
     )
 }
 
-export default withAuth(withRouter(MoveContainer));
+export default withRouter(MoveContainer);

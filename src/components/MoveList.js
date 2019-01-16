@@ -4,6 +4,7 @@ import { getMoves } from '../actions/moveActions'
 import Move from './Move'
 import { withRouter } from 'react-router-dom'
 
+
 class MoveList extends React.Component {
 
   componentDidMount() {
