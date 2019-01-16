@@ -30,6 +30,11 @@ const userReducer = (state=initialState, action) => {
        authenticatingUser: false
      }
 
+  case 'LOGOUT_USER':
+    return {
+      
+    }
+
     default:
       return state;
 

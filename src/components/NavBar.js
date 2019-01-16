@@ -5,21 +5,12 @@ import { connect } from 'react-redux';
 
 class NavBar extends React.Component {
 
-  // state = {
-  //   userId: null
-  // }
-  // //
-  // componentDidMount() {
-  //   this.setState({
-  //     userId: this.props.user.id
-  //   })
-  // }
-  // console.log("NAVBAR",props);
   handleClick = () => {
-    // this.props.history.clear()
-    // this.props.history.replace('/moves')
-
     this.props.history.push(`/users/${this.props.user.id}/moves`)
+  }
+
+  handleLogout = () => {
+    
   }
 
   render() {
@@ -29,12 +20,16 @@ class NavBar extends React.Component {
        <div className="container">
          <ul className="left hide-on-med-and-down">
            <li>
-           <button className="nav-btn col s2 btn-small cyan lighten-2" style={{fontFamily: 'Hammersmith One', fontSize: '15px'}}>
+           <button onClick={this.handleLogout} className="nav-btn col s2 btn-small cyan lighten-2" style={{fontFamily: 'Hammersmith One', fontSize: '15px'}}>
              Log Out
            </button>
-          {this.props.loggedIn ? <button onClick={this.handleClick} className="col s2 btn-small cyan lighten-2" style={{fontFamily: 'Hammersmith One', fontSize: '15px'}}>
+          {
+            this.props.loggedIn ?
+            <button onClick={this.handleClick} className="col s2 btn-small cyan lighten-2" style={{fontFamily: 'Hammersmith One', fontSize: '15px'}}>
               Moves
-            </button> : null}
+            </button> :
+            null
+          }
           </li>
          </ul>
          <div style={{color: 'black'}}>LOGO??
