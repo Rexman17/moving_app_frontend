@@ -81,6 +81,20 @@
   background-position: 100%; */
 /* } */
 
+/* #logo-icon {
+  display: block;
+  margin-top: 5px;
+  height: 40px;
+  position: fixed;
+} */
+
+/* #nav {
+  background-image: url("/images/vector-box.png");
+  background-repeat: no-repeat;
+  background-size: 3%;
+  display: inline-block;
+} */
+
 .item-image {
   display: block;
   max-width:400px;

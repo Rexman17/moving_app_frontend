@@ -35,6 +35,7 @@ class LoginForm extends React.Component {
       ) : (
       <Fragment>
         <div style={{marginTop: '10%'}} className="row">
+
           <form  onSubmit={this.handleLoginSubmit} error={this.props.failedLogin} className="col s12 m4 offset-m4">
             <div className="card">
               <div className="card-action cyan lighten-2 white-text">
