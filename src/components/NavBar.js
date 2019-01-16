@@ -17,15 +17,17 @@ class NavBar extends React.Component {
   }
 
   render() {
-    console.log("NAV BAR", this.props.userId);
+    console.log("NAV BAR", this.props.loggedIn);
     return (
       <nav className="nav-wrapper white">
        <div className="container">
          <ul className="left hide-on-med-and-down">
            <li>
-           <button onClick={this.handleLogout} className="nav-btn col s2 btn-small cyan lighten-2" style={{fontFamily: 'Hammersmith One', fontSize: '15px'}}>
+
+            { !this.props.loggedIn ? null : <button onClick={this.handleLogout} className="nav-btn col s2 btn-small cyan lighten-2" style={{fontFamily: 'Hammersmith One', fontSize: '15px'}}>
              Log Out
-           </button>
+           </button> }
+
           {
             this.props.loggedIn ?
             <button onClick={this.handleClick} className="col s2 btn-small cyan lighten-2" style={{fontFamily: 'Hammersmith One', fontSize: '15px'}}>

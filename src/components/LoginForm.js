@@ -41,7 +41,7 @@ class LoginForm extends React.Component {
                 <h3>Login Form</h3>
               </div>
               <div className="card-content">
-              { this.props.error ? this.props.error : null }
+              { !this.props.failedLogin ? null : this.props.error }
                 <div className="form-field">
                   <input onChange={this.handleChange} type='text' name="username" placeholder="Username" value={this.state.username} required autoComplete="off" />
                 </div><br />
