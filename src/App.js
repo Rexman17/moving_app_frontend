@@ -11,7 +11,7 @@ import LoginForm from './components/LoginForm'
 
 
 const App = props => {
-
+  console.log("%c APP PROPS", 'color: pink', props);
   return (
     <Fragment>
       <div className="App">
@@ -31,3 +31,4 @@ const App = props => {
 }
 
 export default withRouter(App);
+// injects router props to App component so when there is a change in the url, app will hear about it

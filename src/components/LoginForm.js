@@ -1,20 +1,38 @@
 import React, { Fragment } from 'react';
 import { connect } from 'react-redux'
-import { withRouter } from 'react-router'
-
+import { withRouter, Redirect } from 'react-router'   // Redirect later
+import { loginUser } from '../actions/userActions'
 
 class LoginForm extends React.Component {
 
-  state = { username: '', password: '' }
+  state = {
+    username: '',
+    password: ''
+  }
 
-  // if logged in go to the user's moves:
-  // return this.props.loggedIn ? (
-  //     <Redirect to="/users/:userId/moves" />
+  handleChange = e => {
+    e.preventDefault()
+    this.setState({
+      [e.target.name]: e.target.value
+    })
+  }
+
+  handleLoginSubmit = e => {
+    this.props.loginUser(this.state.username, this.state.password)
+    this.setState({
+      username: '',
+      password: ''
+    }) // reset form to initial state
+  }
+
+
   render() {
-    return (
+    return this.props.loggedIn ? (
+      <Redirect to="/users/:userId/moves" />
+      ) : (
       <Fragment>
         <div style={{marginTop: '10%'}} className="row">
-          <div className="col s12 m4 offset-m4">
+          <form onSubmit={this.handleLoginSubmit} className="col s12 m4 offset-m4">
             <div className="card">
 
               <div className="card-action cyan lighten-2 white-text">
@@ -23,11 +41,11 @@ class LoginForm extends React.Component {
 
               <div className="card-content">
                 <div className="form-field">
-                  <input type='text' placeholder="Username" required autoComplete="off" />
+                  <input onChange={this.handleChange} type='text' name="username" placeholder="Username" value={this.state.username} required autoComplete="off" />
                 </div><br />
 
                 <div className="form-field">
-                  <input type='password' placeholder="Password" required autoComplete="off" />
+                  <input onChange={this.handleChange} type='password' name="password" placeholder="Password" value={this.state.password} required autoComplete="off" />
                 </div><br />
 
                 <div className="form-field">
@@ -39,42 +57,27 @@ class LoginForm extends React.Component {
               </div>
 
             </div>
-          </div>
+          </form>
         </div>
       </Fragment>
     )
   }
 }
 
-
-
-
-const mapStateToProps = state => {
+// TODO: OBJECT DESCTRUCTURING
+const mapStateToProps = (state) => {
   return {
-    state
+    authenticatingUser: state.user.authenticatingUser,
+    failedLogin: state.user.failedLogin,
+    error: state.user.error,
+    loggedIn: state.user.loggedIn
   }
 }
 
-export default withRouter(connect(mapStateToProps)(LoginForm))
+const mapDispatchToProps = dispatch => {
+  return {
+    loginUser: (username, password) => dispatch(loginUser(username, password))
+  }
+}
 
-
-// <div id="login-parent" className="container row">
-//   <form id="form-login" className="col s12">
-//     <div className="row">
-//         <div className="input-field col s4">
-//         <i className="material-icons prefix">account_circle</i>
-//         <input id="username" type="text" className="validate" placeholder="Username" autoComplete="off" required/>
-//       </div>
-//     </div>
-//     <div className="row">
-//     <div className="input-field col s4">
-//       <i className="material-icons prefix">vpn_key</i>
-//       <input id="password" type="password" className="validate" placeholder="Password" autoComplete="off" required/>
-//       <button type="submit" className="btn-small red cyan lighten-2">
-//         Login
-//       </button>
-//     </div>
-//
-//   </div>
-// </form>
-// </div>
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(LoginForm))
