@@ -15,7 +15,7 @@ export function addBox(name, category, userId, moveId) {
   return(dispatch) => {
     fetch(`http://localhost:3000/api/v1/users/${userId}/moves/${moveId}/boxes`, {
       method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
+      headers: { 'Content-Type': 'application/json', Authorization: `Bearer ${localStorage['Authorization']}` },
       body: JSON.stringify({
         name: name,
         category: category
@@ -61,7 +61,7 @@ export function editBox(name, category, userId, moveId, boxId) {
   return(dispatch) => {
     fetch(`http://localhost:3000/api/v1/users/${userId}/moves/${moveId}/boxes/${boxId}`, {
       method: 'PATCH',
-      headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+      headers: { 'Content-Type': 'application/json', Accept: 'application/json', Authorization: `Bearer ${localStorage['Authorization']}` },
       body: JSON.stringify({
         name: name,
         category: category

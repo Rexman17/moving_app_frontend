@@ -2,9 +2,12 @@
 
 // GET MOVES
 export function getMoves(id) {
-  // debugger
+  debugger
   return(dispatch) => {
-    fetch(`http://localhost:3000/api/v1/users/${id}/moves`)
+    fetch(`http://localhost:3000/api/v1/users/${id}/moves`, {
+      method: 'GET',
+      headers: { Accept: 'application/json', Authorization: `Bearer ${localStorage.getItem('jwt')}` }
+    })
       .then(r => r.json())
       .then(moves => {
         // debugger
@@ -20,7 +23,10 @@ export function addMove(name, date, userId) {
   return(dispatch) => {
     fetch(`http://localhost:3000/api/v1/users/${userId}/moves`, {
       method: "POST",
-      headers: { 'Content-Type': 'application/json' },
+      headers: {
+        'Content-Type': 'application/json',
+         Authorization: `Bearer ${localStorage.getItem('jwt')}`
+     },
       body: JSON.stringify({
           name: name,
           date: date
@@ -66,7 +72,7 @@ export function editMove(name, date, userId, moveId) {
   return(dispatch) => {
     fetch(`http://localhost:3000/api/v1/users/${userId}/moves/${moveId}`, {
       method: 'PATCH',
-      headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+      headers: { 'Content-Type': 'application/json', Accept: 'application/json', Authorization: `Bearer ${localStorage.getItem('jwt')}` },
       body: JSON.stringify({
         name: name,
         date: date

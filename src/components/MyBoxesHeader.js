@@ -16,6 +16,7 @@ class MyBoxesHeader extends React.Component {
     fetch(`http://localhost:3000/api/v1/users/${userId}/moves`)
       .then(r => r.json())
       .then(moves => {
+        // debugger
         let moveIdInt = parseInt(this.props.match.params.moveId)
         let foundMove = moves.find((m) => m.id === moveIdInt)
         let name = foundMove.name
@@ -24,18 +25,6 @@ class MyBoxesHeader extends React.Component {
     })
   }
 
-  // reformatDate = (date) => {
-  //   if (date) {
-  //     let arrayOfDate = date.split("-")
-  //     let newArrOfDate = []
-  //     newArrOfDate.push(arrayOfDate[1])
-  //     newArrOfDate.push(arrayOfDate[2])
-  //     newArrOfDate.push(arrayOfDate[0])
-  //     return newArrOfDate.join(',').split(',').join("-")
-  //   } else {
-  //     return null;
-  //   }
-  // }
 
   render() {
 
