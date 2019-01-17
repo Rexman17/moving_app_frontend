@@ -39,8 +39,9 @@ class NewItemForm extends React.Component {
      (error, result) => {
 
        if (result && result.event === "success") {
+         // debugger
          this.setState({
-           image: `http://res.cloudinary.com/dly4mslmg/image/upload/w_300,h_300,c_lpad,b_white/${result.info.path}`
+           image: `https://res.cloudinary.com/${MY_CLOUD_NAME}/image/upload/${result.info.path}`
          });
        }
      }
