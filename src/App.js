@@ -8,6 +8,7 @@ import ItemsContainer from './containers/ItemsContainer'
 import NavBar from './components/NavBar'
 import { Route, Switch, Redirect } from 'react-router-dom'
 import LoginForm from './components/LoginForm'
+import SignUp from './components/SignUp'
 
 
 const App = props => {
@@ -18,8 +19,7 @@ const App = props => {
         <NavBar />
         <Switch>
           <Route exact path="/" render={() => <Redirect to="/users/:userId/moves" />} />
-
-          {/*<Route exact path="/moves" component={MoveContainer} />*/}
+          <Route exact path="/signup" component={SignUp} />
           <Route exact path="/login" component={LoginForm} />
           <Route exact path = "/users/:userId/moves" render={() => <MoveContainer />} />
           <Route exact path="/users/:userId/moves/:moveId/boxes" render={() => <BoxContainer/>} />

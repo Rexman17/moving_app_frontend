@@ -76,3 +76,24 @@ export const authenticatingUser = () => ({ type: 'AUTHENTICATING_USER' })
 // }
 
 export const logoutUser = () => ({ type: 'LOGOUT_USER' })
+
+// SIGN UP USER
+export const signUpUser = (username, password) => {
+	return (dispatch) => {
+	  const data = { user: {username, password} }
+	    fetch(`${process.env.REACT_APP_API_ENDPOINT}/api/v1/users`,{
+				method: 'POST',
+				headers: {
+					'Content-Type': 'application/json',
+					Accept: 'application/json'
+				},
+        body: JSON.stringify(data)
+      })
+      .then(res => res.json())
+	    .then(res => {
+		    localStorage.setItem('jwt', res.jwt)
+		    dispatch({ type: "SET_CURRENT_USER", payload: res.user})
+	     })
+
+	}
+  }
