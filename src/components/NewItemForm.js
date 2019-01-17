@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom'
 
 const MY_CLOUD_NAME = process.env.REACT_APP_CLOUD_NAME
-const PRESETS = process.env.REACT_APP_UPLOAD_PRESET
+// const PRESET = process.env.REACT_APP_UPLOAD_PRESET
 
 class NewItemForm extends React.Component {
   // create a controlled form;
@@ -34,9 +34,10 @@ class NewItemForm extends React.Component {
     window.cloudinary.createUploadWidget(
      {
        cloudName: MY_CLOUD_NAME,
-       uploadPreset: PRESETS
+       uploadPreset: "snvjog2a"
      },
      (error, result) => {
+
        if (result && result.event === "success") {
          this.setState({
            image: `http://res.cloudinary.com/dly4mslmg/image/upload/w_300,h_300,c_lpad,b_white/${result.info.path}`
