@@ -34,7 +34,7 @@ class SignUp extends React.Component {
 
                 <div className="form-field">
                   <button className="btn-large waves-effect waves-dark cyan lighten-2" type="submit" style={{width: '100%', fontFamily: 'Hammersmith One, sans-serif'}}>
-                    Sign Up
+                    Let's Get Movin'
                   </button>
                 </div>
               </div>

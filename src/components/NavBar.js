@@ -19,7 +19,7 @@ class NavBar extends React.Component {
   render() {
     console.log("NAV BAR", this.props.loggedIn);
     return (
-      <nav id="nav" className="nav-wrapper white">
+      <nav id="nav" className="nav-wrapper white" >
        <div className="container">
          <ul className="left hide-on-med-and-down">
            <li>
