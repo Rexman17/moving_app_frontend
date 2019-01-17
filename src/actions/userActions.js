@@ -1,8 +1,13 @@
 // ALREADY EXISTING USER
 export const /*FUNCTION*/ loginUser = (username, password) => {
-  return /*FUNCTION*/ (dispatch) => {
+  return /*FUNCTION*/ (dispatch) => { //thunk
+    // console.log(process.env.REACT_APP_API_ENDPOINT)
     dispatch({ type: 'AUTHENTICATING_USER' })
-
+    // dispatch(authenticatingUser())
+    // fetch(`${process.env.REACT_APP_API_ENDPOINT}/api/v1/login`)
+    // adapter.loginUser(username, password)
+    // http://localhost:3000
+    // console.log(`${process.env.REACT_APP_API_ENDPOINT}/api/v1/login`);
     fetch(`${process.env.REACT_APP_API_ENDPOINT}/api/v1/login`, { //TODO: move this to an adapter
       method: 'POST',
       headers: {
@@ -63,7 +68,9 @@ export const failedLogin = (errorMsg) => ({
 
 // tell our app we're currently fetching
 export const authenticatingUser = () => ({ type: 'AUTHENTICATING_USER' })
-
+// export const authenticatingUser = () => {
+//   return { type: 'AUTHENTICATING_USER' }
+// }
 
 export const logoutUser = () => ({ type: 'LOGOUT_USER' })
 
@@ -84,5 +91,6 @@ export const signUpUser = (username, password) => {
 		    localStorage.setItem('jwt', res.jwt)
 		    dispatch({ type: "SET_CURRENT_USER", payload: res.user})
 	     })
+
 	}
   }
