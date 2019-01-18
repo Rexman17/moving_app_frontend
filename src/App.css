@@ -10,6 +10,13 @@
   top: 200px;
 }
 
+#splash {
+  background-image: url("/images/movingBoxes.jpg");
+  background-size: 100%;
+  background-repeat: no-repeat;
+  opacity: 1;
+}
+
 /* #form-login {
   align-content: center;
 }  */

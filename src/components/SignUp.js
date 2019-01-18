@@ -26,7 +26,7 @@ class SignUp extends React.Component {
 
   renderSignUpForm = () => {
     return (
-      <div>
+      <div id="splash">
       <Fragment>
         <div style={{marginTop: '10%'}} className="row">
           <form onSubmit={this.handleSubmit} className="col s12 m4 offset-m4">

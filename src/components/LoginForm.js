@@ -35,8 +35,8 @@ class LoginForm extends React.Component {
       <Redirect to={"/users/" + this.props.user.user.id + "/moves"}/>
       ) : (
       <Fragment>
+      <div id="splash">
         <div style={{marginTop: '10%'}} className="row">
-
           <form  onSubmit={this.handleLoginSubmit} className="col s12 m4 offset-m4">
             <div className="card">
               <div className="card-action cyan lighten-2 white-text">
@@ -64,12 +64,10 @@ class LoginForm extends React.Component {
           </form>
         </div>
 
-
             First time here? <Link to="/signup">Sign Up</Link>
-
-
-
+      </div>
       </Fragment>
+
     )
   }
 }

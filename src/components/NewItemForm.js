@@ -55,7 +55,7 @@ class NewItemForm extends React.Component {
     return (
       <Fragment>
       <button onClick={this.openWidget} className="addOrEditMoveBtn col s2 btn-small red accent-3" style={{fontFamily: 'Hammersmith One', fontSize: '15px', margin: '5px'}}>
-      <div>Add Image</div>
+      <div>Upload Image</div>
       </button>
         {<p style={{fontFamily: 'Oswald'}}>{this.state.uploaded ? `File Uploaded` : null}</p>}
         <form onSubmit={this.handleSubmit} className="container">
@@ -64,7 +64,7 @@ class NewItemForm extends React.Component {
           </div>
 
           <div className="container">
-            <button type="submit" className="addOrEditMoveBtn col s2 btn-small red accent-3" style={{fontFamily: 'Hammersmith One', fontSize: '15px', margin: '15px'}}>
+            <button type="submit" className="addOrEditMoveBtn col s2 btn-small red accent-3" style={{fontFamily: 'Hammersmith One', fontSize: '15px', marginBottom: '15px'}}>
               add item
             </button>
           </div>
