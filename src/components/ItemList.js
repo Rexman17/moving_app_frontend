@@ -3,6 +3,7 @@ import Item from './Item'
 import { withRouter } from 'react-router-dom'
 import { connect } from 'react-redux';
 import { getBoxItems } from '../actions/itemActions'
+// import { Link } from 'react-router-dom'
 
 class ItemList extends React.Component {
 
@@ -18,9 +19,11 @@ class ItemList extends React.Component {
     })
 
     return (
+
       <div className="row">
           {mappedItems}
       </div>
+
     )
   }
 }

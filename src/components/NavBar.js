@@ -16,6 +16,8 @@ class NavBar extends React.Component {
     this.props.history.push("/login")
   }
 
+
+
   render() {
     console.log("NAV BAR", this.props.loggedIn);
     return (
@@ -35,6 +37,8 @@ class NavBar extends React.Component {
             </button> :
             null
           }
+
+
           </li>
          </ul>
          <div className="brand-logo center">
