@@ -11,7 +11,7 @@ class NewItemForm extends React.Component {
   state = {
     name: '',
     image: '',
-    // editing: false
+    uploaded: false
   }
 
   handleChange = (event) => {
@@ -27,7 +27,7 @@ class NewItemForm extends React.Component {
 
       this.props.addItem(this.state.name, this.state.image, userId, moveId, boxId)
 
-      this.setState({ name: '', image: '' }) // reset form fields
+      this.setState({ name: '', image: '', uploaded: false}) // reset form fields
   }
 
   openWidget = () => {
@@ -41,7 +41,7 @@ class NewItemForm extends React.Component {
        if (result && result.event === "success") {
          // debugger
          this.setState({
-           image: `https://res.cloudinary.com/${MY_CLOUD_NAME}/image/upload/${result.info.path}`
+           image: `https://res.cloudinary.com/${MY_CLOUD_NAME}/image/upload/${result.info.path}`, uploaded: true
          });
        }
      }
@@ -55,9 +55,9 @@ class NewItemForm extends React.Component {
     return (
       <Fragment>
       <button onClick={this.openWidget} className="addOrEditMoveBtn col s2 btn-small red accent-3" style={{fontFamily: 'Hammersmith One', fontSize: '15px', margin: '5px'}}>
-        Upload / Take Pic of Item(s)
+      <div>Add Image</div>
       </button>
-
+        {<p style={{fontFamily: 'Oswald'}}>{this.state.uploaded ? `File Uploaded` : null}</p>}
         <form onSubmit={this.handleSubmit} className="container">
           <div className="input-field col s3 row container">
             <input onChange={this.handleChange} placeholder="Item Name/Description..." name="name" id="item_name" type="text" value={this.state.name} autoComplete="off" />
