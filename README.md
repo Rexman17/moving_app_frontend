@@ -7,3 +7,6 @@ Enables users to keep track of all of their personal items during the moving pro
 
 ### Demo
 https://www.youtube.com/watch?v=13ej9B7GjmY&feature=youtu.be
+
+### Backend Repo
+https://github.com/Rexman17/moving_app_backend
