@@ -10,12 +10,18 @@
   top: 200px;
 }
 
-#splash {
+div.splash {
   background-image: url("/images/movingBoxes.jpg");
   background-size: 100%;
   background-repeat: no-repeat;
   opacity: 1;
+  height: 950px;
+  width: 1920px;
+
 }
+
+
+
 
 /* #form-login {
   align-content: center;

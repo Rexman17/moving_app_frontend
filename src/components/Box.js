@@ -2,6 +2,7 @@ import React from 'react';
 import { withRouter } from 'react-router-dom'
 import { connect } from 'react-redux';
 import { deleteBox, selectBox } from '../actions/boxActions'
+import { deleteBoxItems } from '../actions/itemActions'
 
 class Box extends React.Component {
 
@@ -31,6 +32,9 @@ class Box extends React.Component {
   handleDelete = () => {
     const { userId, moveId } = this.props.match.params
     this.props.deleteBox(userId, moveId, this.props.box.id)
+    // also delete its items in the side bar
+    // delete this.props.box.items
+
   }
 
   handleClickToEdit = () => {
@@ -46,7 +50,7 @@ class Box extends React.Component {
 
   render() {
     // const { userId, moveId } = this.props.match.params
-    console.log("box", this.props);
+    console.log("box", this.props.box);
     return (
       <div className="col s12 m5">
         <div className="card small box-card z-depth-5" style={{padding: '5px'}}>
@@ -83,7 +87,8 @@ class Box extends React.Component {
 const mapDispatchToProps = dispatch => {
   return {
     deleteBox: (userId, moveId, boxId) => dispatch(deleteBox(userId, moveId, boxId)),
-    selectBox: (box) => dispatch(selectBox(box))
+    selectBox: (box) => dispatch(selectBox(box)),
+    deleteBoxItems: (userId, moveId, boxId) => dispatch(deleteBoxItems(userId, moveId, boxId))
     // prefillForm: (box) => dispatch(prefillForm(box))
   }
 }

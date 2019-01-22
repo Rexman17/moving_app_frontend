@@ -67,6 +67,17 @@ export function deleteItem(userId, moveId, boxId, itemId) {
   }
 }
 
+// DELETE A BOX'S ITEMS
+export function deleteBoxItems(userId, moveId, boxId) {
+  return(dispatch) => {
+    fetch(`http://localhost:3000/api/v1/users/${userId}/moves/${moveId}/boxes/${boxId}/items`, {
+      method: 'DELETE',
+      headers: {  Authorization: `Bearer ${localStorage.getItem('jwt')}` }
+    })
+    return dispatch({ type: 'DELETE_BOX_ITEMS', payload: boxId })
+  }
+}
+
 // SELECT ITEM TO EDIT
 // export function selectItem(item) {
 //   debugger

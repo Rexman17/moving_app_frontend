@@ -38,7 +38,7 @@ class ItemsContainer extends React.Component {
     return (
       <div className="container">
         <button onClick={this.seeBoxes} className="left btn-small waves-effect red accent-3">
-          <i className="large material-icons">arrow_back</i>
+          <i className="large material-icons">arrow_back</i> Back to Boxes
         </button>
         <h2 className="card-panel white black-text cont-title">Items in Box #{this.state.boxNum}</h2>
         <NewItemForm />

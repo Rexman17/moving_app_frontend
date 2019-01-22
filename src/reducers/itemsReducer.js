@@ -16,6 +16,9 @@ const itemsReducer = (state=initialState, action) => {
 
     case "DELETE_ITEM":
       return state.filter((item) => item.id !== action.payload)
+    // 
+    // case "DELETE_BOX_ITEMS":
+    //   return
 
     // case "EDIT_ITEM":
     // return state.map((item) => {
