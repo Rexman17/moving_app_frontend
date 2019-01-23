@@ -9,6 +9,7 @@ import { getMoveItems } from '../actions/itemActions'
 import { withRouter } from 'react-router-dom'
 import { getMoves } from '../actions/moveActions'
 import { getBoxes } from '../actions/boxActions'
+import withAuth from '../HOCs/withAuth'
 
 
 class BoxContainer extends React.Component {
@@ -105,4 +106,4 @@ const mapDispatchToProps = dispatch => {
 }
 
 
-export default withRouter(connect(mapStateToProps, mapDispatchToProps)(BoxContainer));
+export default withAuth(withRouter(connect(mapStateToProps, mapDispatchToProps)(BoxContainer)));

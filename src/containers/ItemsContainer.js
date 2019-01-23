@@ -2,6 +2,7 @@ import React from 'react';
 import {withRouter} from 'react-router-dom'
 import ItemList from '../components/ItemList'
 import NewItemForm from '../components/NewItemForm'
+import withAuth from '../HOCs/withAuth'
 
 
 class ItemsContainer extends React.Component {
@@ -49,4 +50,4 @@ class ItemsContainer extends React.Component {
 
 }
 
-export default withRouter(ItemsContainer)
+export default withAuth(withRouter(ItemsContainer))

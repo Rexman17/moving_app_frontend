@@ -3,6 +3,7 @@ import React from 'react';
 import { withRouter } from 'react-router-dom'
 import { connect } from 'react-redux';
 import { logoutUser } from '../actions/userActions'
+import Logo from "../PackingPalLogo.png"
 
 class NavBar extends React.Component {
 
@@ -42,7 +43,7 @@ class NavBar extends React.Component {
           </li>
          </ul>
          <div className="brand-logo center">
-          <img id="logo-icon" src="../images/PackingPalLogo.png" alt="LOGO"/>
+          <img id="logo-icon" src={Logo} alt="LOGO"/>
          </div>
        </div>
       </nav>

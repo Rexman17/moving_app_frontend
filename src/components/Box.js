@@ -54,7 +54,7 @@ class Box extends React.Component {
     return (
       <div className="col s12 m5">
         <div className="card small box-card z-depth-5" style={{padding: '5px'}}>
-        { /* <p style={{fontSize: '20px'}}>Box #{this.state.idx + 1}</p> */}
+          {/*<p style={{fontSize: '20px'}}>Box #{this.state.idx + 1}</p>*/}
         <span className="card-title">
           <div style={{marginTop: '20px'}}>
             "{this.state.name.toUpperCase()}"
