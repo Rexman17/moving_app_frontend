@@ -9,21 +9,21 @@ class Box extends React.Component {
   constructor(props) {
     super(props)
 
-    const { name, category, idx } = this.props.box // destructuring
+    const { name, category, index } = this.props.box // destructuring
 
     this.state = {
       name: name,
       category: category,
-      idx: idx
+      index: index
     }
   }
 
   static getDerivedStateFromProps(props, state) {
-    if (props.box.name !== state.name || props.box.category !== state.category || props.box.idx !== state.idx) {
+    if (props.box.name !== state.name || props.box.category !== state.category || props.box.index !== state.index) {
       return ({
         name: props.box.name,
         category: props.box.category,
-        idx: props.box.idx
+        index: props.box.index
       })
     }
     return null;
@@ -54,7 +54,7 @@ class Box extends React.Component {
     return (
       <div className="col s12 m5">
         <div className="card small box-card z-depth-5" style={{padding: '5px'}}>
-          {/*<p style={{fontSize: '20px'}}>Box #{this.state.idx + 1}</p>*/}
+          <p style={{fontSize: '20px'}}>Box #{this.state.index + 1}</p>
         <span className="card-title">
           <div style={{marginTop: '20px'}}>
             "{this.state.name.toUpperCase()}"

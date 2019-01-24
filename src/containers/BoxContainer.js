@@ -67,9 +67,9 @@ class BoxContainer extends React.Component {
     console.log('%c ITEMS ', "color: red", items);
 
     // map over boxes to add idx key:
-    boxes = boxes.map((b) => {
-      return {...b, idx: boxes.indexOf(b)}
-    })
+    // this.props.boxes = boxes.map((b) => {
+    //   return {...b, idx: boxes.indexOf(b)}
+    // })
 
     return (
       <div className="container" id="box-cont">

@@ -4,13 +4,17 @@ const boxesReducer = (state=initialState, action) => {
 
   switch (action.type) {
     case "GET_BOXES":
-    
+
       console.log("===========payload", action.payload)
-      return [...action.payload]
+      let boxes = action.payload
+      boxes.forEach((b,idx)=>b.index=idx)
+      return [...boxes]
 
     case "ADD_BOX":
     // debugger
-      return [...state, action.payload]
+      let box = action.payload
+      box.index = state.length
+      return [...state, box]
 
     case "DELETE_BOX":
       return state.filter((box) => box.id !== action.payload)
