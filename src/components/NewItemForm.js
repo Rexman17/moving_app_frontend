@@ -34,7 +34,7 @@ class NewItemForm extends React.Component {
     window.cloudinary.createUploadWidget(
      {
        cloudName: MY_CLOUD_NAME,
-       uploadPreset: "snvjog2a"
+       uploadPreset: REACT_APP_UPLOAD_PRESET
      },
      (error, result) => {
 

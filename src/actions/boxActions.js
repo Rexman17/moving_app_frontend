@@ -7,8 +7,7 @@ export function getBoxes(userId, moveId) {
     })
       .then(r => r.json())
       .then(boxes => {
-        // debugger
-        return dispatch({type: 'GET_BOXES', payload: boxes})
+        return disrapatch({type: 'GET_BOXES', payload: boxes})
       })
   }
 }
@@ -26,7 +25,6 @@ export function addBox(name, category, userId, moveId) {
     })
       .then(r => r.json())
       .then(newBox => {
-        // debugger
         return dispatch({type: "ADD_BOX", payload: newBox})
       })
   }
@@ -53,13 +51,6 @@ export function selectBox(box) {
   }
 }
 
-// PREFILL EDIT FORM:
-// export function prefillForm(box) {
-//   return {
-//     type: "PREFILL_FORM"
-//   }
-// }
-
 // PATCH REQUEST / EDIT BOX
 // `http://localhost:3000/api/v1/users/${userId}/moves/${moveId}/boxes/${boxId}`
 export function editBox(name, category, userId, moveId, boxId) {
@@ -78,9 +69,3 @@ export function editBox(name, category, userId, moveId, boxId) {
       })
   }
 }
-
-
-
-
-
-//

@@ -23,7 +23,6 @@ class NewBoxForm extends React.Component {
   }
 
   handleChange = (event) => {
-    // console.log(event.target.value);
     this.setState({
       [event.target.name]: event.target.value
     })
@@ -41,7 +40,7 @@ class NewBoxForm extends React.Component {
         boxName: '',
         boxCategory: ''
       })
-      
+
     } else if (this.state.editing === true ) { // EDIT MODE
 
       this.props.editBox(this.state.boxName, this.state.boxCategory, userId, moveId, this.props.selectedBox.id)

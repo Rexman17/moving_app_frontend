@@ -16,8 +16,7 @@ class BoxContainer extends React.Component {
 
   state = {
     searchTerm: '',
-    items: [],
-    moves: []
+    items: []
   }
 
   componentDidMount() {
@@ -25,13 +24,7 @@ class BoxContainer extends React.Component {
     const { moveId, userId } = this.props.match.params
     this.props.getMoveItems(userId, moveId)
     this.props.getBoxes(userId, moveId)
-    // React fetch to get moves to pass to MyBoxesHeader
-    // fetch(`http://localhost:3000/api/v1/users/${userId}/moves`)
-    // .then(r => r.json())
-    // .then(moves => {
-    //   debugger
-    //   this.setState({ moves }, () => console.log("updated state", this.state))
-    // })
+
 
   }
 
@@ -44,8 +37,7 @@ class BoxContainer extends React.Component {
     })
   }
 
-  filterBoxes = () => { // if this find doesnt find anything we still have to pass down an array
-    // return this.props.boxes.find(b => b.items.find(i => i.name.includes(this.state.searchTerm))) || []
+  filterBoxes = () => {
     return this.props.boxes.filter(b => b.items.find(i => i.name.match(new RegExp(this.state.searchTerm, 'i'))))
   }
 
@@ -56,28 +48,19 @@ class BoxContainer extends React.Component {
   }
 
   render() {
-    // console.log("props IN BOX CONTAINER", this.props.moves);
-    // const filteredItems = this.props.moveItems.filter((item) => {
-    //   return item.name.match(/this.state.searchTerm/i) // regex case insensitive /i .match/i
-    // })
 
-    // const itemBoxIds = this.state.searchTerm ? this.state.items.map((i) => i.box_id) : this.props.moveItems.map((i) => i.box_id)
     let boxes = this.state.searchTerm ? this.filterBoxes() : this.props.boxes
     const items = this.state.searchTerm ? this.filterItems() : this.props.moveItems
     console.log('%c ITEMS ', "color: red", items);
 
-    // map over boxes to add idx key:
-    // this.props.boxes = boxes.map((b) => {
-    //   return {...b, idx: boxes.indexOf(b)}
-    // })
+
 
     return (
       <div className="container" id="box-cont">
-        {/*<h2 className="card-panel white black-text cont-title">My Boxes</h2>*/}
         <div className="row">
           <MyBoxesHeader moves={this.state.moves} />
           <NewBoxForm />
-          <ItemSearchBar doubleFilter={this.doubleFilter} handleSearch={this.handleSearch} searchTerm={this.state.searchTerm} />
+          <ItemSearchBar handleSearch={this.handleSearch} searchTerm={this.state.searchTerm} />
           <BoxList boxes={boxes} />
           <ItemsSideBar items={items} searchTerm={this.state.searchTerm} />
         </div>
