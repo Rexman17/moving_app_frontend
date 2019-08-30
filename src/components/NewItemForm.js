@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom'
 
 const MY_CLOUD_NAME = process.env.REACT_APP_CLOUD_NAME
-// const PRESET = process.env.REACT_APP_UPLOAD_PRESET
+const REACT_APP_UPLOAD_PRESET = process.env.REACT_APP_UPLOAD_PRESET
 
 class NewItemForm extends React.Component {
   // create a controlled form;
@@ -51,7 +51,6 @@ class NewItemForm extends React.Component {
 
 
   render() {
-    // console.log("item form", this.props);
     return (
       <Fragment>
       <button onClick={this.openWidget} className="addOrEditMoveBtn col s2 btn-small red accent-3" style={{fontFamily: 'Hammersmith One', fontSize: '15px', margin: '5px'}}>

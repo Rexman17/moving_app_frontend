@@ -15,8 +15,7 @@ import withAuth from '../HOCs/withAuth'
 class BoxContainer extends React.Component {
 
   state = {
-    searchTerm: '',
-    items: []
+    searchTerm: ''
   }
 
   componentDidMount() {
@@ -29,13 +28,9 @@ class BoxContainer extends React.Component {
   }
 
   handleSearch = event => {
-    this.setState({ searchTerm: event.target.value }, () => {
-      const filteredItems = this.props.moveItems.filter((item) => {
-        return item.name.toLowerCase().includes(this.state.searchTerm)
-      })
-      this.setState({ items: filteredItems })
-    })
+    this.setState({ searchTerm: event.target.value })
   }
+
 
   filterBoxes = () => {
     return this.props.boxes.filter(b => b.items.find(i => i.name.match(new RegExp(this.state.searchTerm, 'i'))))
@@ -49,10 +44,8 @@ class BoxContainer extends React.Component {
 
   render() {
 
-    let boxes = this.state.searchTerm ? this.filterBoxes() : this.props.boxes
+    const boxes = this.state.searchTerm ? this.filterBoxes() : this.props.boxes
     const items = this.state.searchTerm ? this.filterItems() : this.props.moveItems
-    console.log('%c ITEMS ', "color: red", items);
-
 
 
     return (

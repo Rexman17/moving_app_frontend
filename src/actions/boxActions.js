@@ -7,7 +7,7 @@ export function getBoxes(userId, moveId) {
     })
       .then(r => r.json())
       .then(boxes => {
-        return disrapatch({type: 'GET_BOXES', payload: boxes})
+        return dispatch({type: 'GET_BOXES', payload: boxes})
       })
   }
 }
