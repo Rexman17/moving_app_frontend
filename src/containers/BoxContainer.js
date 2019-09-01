@@ -33,12 +33,12 @@ class BoxContainer extends React.Component {
 
 
   filterBoxes = () => {
-    return this.props.boxes.filter(b => b.items.find(i => i.name.match(new RegExp(this.state.searchTerm, 'i'))))
+    return this.props.boxes.filter(b => b.items.find(i => i.name.includes(this.state.searchTerm)))
   }
 
   filterItems = () => {
     return this.props.moveItems.filter((item) => {
-      return item.name.match(new RegExp(this.state.searchTerm, 'i')) // regex case insensitive /i .match/i
+      return item.name.includes(this.state.searchTerm) 
     })
   }
 
@@ -46,6 +46,7 @@ class BoxContainer extends React.Component {
 
     const boxes = this.state.searchTerm ? this.filterBoxes() : this.props.boxes
     const items = this.state.searchTerm ? this.filterItems() : this.props.moveItems
+
 
 
     return (
