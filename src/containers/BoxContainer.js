@@ -38,7 +38,7 @@ class BoxContainer extends React.Component {
 
   filterItems = () => {
     return this.props.moveItems.filter((item) => {
-      return item.name.includes(this.state.searchTerm) 
+      return item.name.includes(this.state.searchTerm)
     })
   }
 

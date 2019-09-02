@@ -11,8 +11,6 @@ const singleBoxReducer = (state=initialState, action) => {
     case "SELECT_BOX":
       return {...state, ...action.payload}
 
-    case "PREFILL_FORM":
-      return state
 
     default:
       return state;

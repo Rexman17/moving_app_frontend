@@ -14,9 +14,10 @@ class NewBoxForm extends React.Component {
   // Triggers the form to prefill when u click edit btn, updating local state values
   componentDidUpdate(prevProps) {
     if (this.props.selectedBox !== prevProps.selectedBox) {
+      const { name, category } = this.props.selectedBox
       this.setState({
-        boxName: this.props.selectedBox.name,
-        boxCategory: this.props.selectedBox.category,
+        boxName: name,
+        boxCategory: category,
         editing: !this.state.editing
       }, () => console.log("%c componentDidUpdate", 'color: red', this.state))
     }

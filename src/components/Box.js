@@ -6,16 +6,10 @@ import { deleteBoxItems } from '../actions/itemActions'
 
 class Box extends React.Component {
 
-  constructor(props) {
-    super(props)
-
-    const { name, category, index } = this.props.box // destructuring
-
-    this.state = {
-      name: name,
-      category: category,
-      index: index
-    }
+  state = {
+    name: this.props.box.name,
+    category: this.props.box.category,
+    index: this.props.box.index
   }
 
   static getDerivedStateFromProps(props, state) {
@@ -32,24 +26,19 @@ class Box extends React.Component {
   handleDelete = () => {
     const { userId, moveId } = this.props.match.params
     this.props.deleteBox(userId, moveId, this.props.box.id)
-    // also delete its items in the side bar
-    // delete this.props.box.items
 
   }
 
   handleClickToEdit = () => {
     this.props.selectBox(this.props.box)
-    // this.props.prefillForm(this.props.box)
   }
 
   handleClickToSeeItems = () => {
-    // debugger
     const { userId, moveId } = this.props.match.params
     this.props.history.push(`/users/${userId}/moves/${moveId}/boxes/${this.props.box.id}/items`)
   }
 
   render() {
-    // const { userId, moveId } = this.props.match.params
     console.log("box", this.props.box);
     return (
       <div className="col s12 m5">
